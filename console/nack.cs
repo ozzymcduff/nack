@@ -96,10 +96,6 @@ namespace Nack
         "yaml", qw(" yaml yml "),
         "xml", qw(" xml dtd xsl xslt ent "),
     });
-        private static Action sub(Action<string> a)
-        {
-            return () => { a(""); };
-        }
         private static Action O(Action a) { return a; }
         static Dictionary<string, object> opt = new Dictionary<string, object>();
         static Dictionary<string, object> ENV = new Dictionary<string, object>();

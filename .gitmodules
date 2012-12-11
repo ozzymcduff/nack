@@ -1,0 +1,3 @@
+[submodule "ndesc-options"]
+	path = ndesc-options
+	url = git@github.com:wallymathieu/ndesk-options-mirror.git

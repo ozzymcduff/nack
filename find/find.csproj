@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{21B4E07E-4BCA-459B-99C4-B9DC76C2E2B6}</ProjectGuid>
+    <ProjectGuid>{94BD93A7-A916-42A3-A77D-677B7E3291CC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nack</RootNamespace>
-    <AssemblyName>nack</AssemblyName>
+    <RootNamespace>find</RootNamespace>
+    <AssemblyName>find</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -33,9 +33,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Nack.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,7 +46,7 @@
     <Compile Include="..\ndesc-options\src\NDesk.Options\NDesk.Options\Options.cs">
       <Link>Options.cs</Link>
     </Compile>
-    <Compile Include="nack.cs" />
+    <Compile Include="find.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
