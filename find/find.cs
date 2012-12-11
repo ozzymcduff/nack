@@ -6,6 +6,7 @@ using NDesk.Options;
 using System.IO;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
+using System.Reflection;
 
 namespace find
 {
