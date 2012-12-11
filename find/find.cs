@@ -75,9 +75,7 @@ namespace find
 
             var parsed = getopt_specs.Parse(args);
             var path = args.FirstOrDefault();
-            //var expression = !args.Last().StartsWith("-")? args.Last():String.Empty;
-            Console.WriteLine(path);
-            Console.WriteLine(String.Join(", ", opt.Select(o => o.Key + "=" + o.Value)));
+            //Console.WriteLine(String.Join(", ", opt.Select(o => o.Key + "=" + o.Value)));
             int? maxdepth = null;
             Func<string, Type, bool> onsearch = (string s, Type t) => true;
             string searchexpr = null;
@@ -142,9 +140,11 @@ namespace find
                         break;
                 }
             }
-            var files = Search(path, onsearch, maxdepth, searchexpr).ToArray();
-            Console.WriteLine(String.Join(Environment.NewLine, files));
-            //Console.WriteLine(expression);
+            var files = Search(path, onsearch, maxdepth, searchexpr);
+            foreach (var file in files)
+            {
+                Console.WriteLine(file);
+            }
         }
         enum Type
         {
@@ -176,19 +176,7 @@ namespace find
         {
             return (v) => { if (!string.IsNullOrEmpty(v)) opt[p] = sub(v); };
         }
-        private static Action<string> EnvV(string p)
-        {
-            return (v) => { if (!string.IsNullOrEmpty(v)) ENV[p] = v; };
-        }
-        private static Action<string> Sub(Action<string> s)
-        {
-            return s;
-        }
-        private static Action Sub(Action s)
-        {
-            return s;
-        }
-
+        
         private OptionSet Options()
         {
             OptionSet getopt_specs = new OptionSet() {
