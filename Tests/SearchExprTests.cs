@@ -15,19 +15,7 @@ namespace Tests
     {
         private Regex Parse(string str)
         {
-            var s = new MemoryStream();
-            var wr = new StreamWriter(s);
-            wr.Write(str);
-            wr.Flush();
-            s.Position = 0;
-            var input = new ANTLRInputStream(s);
-            // Create an ExprLexer that feeds from that stream
-            var lexer = new SearchExprLexer(input);
-            // Create a stream of tokens fed by the lexer
-            var tokens = new CommonTokenStream(lexer);
-            // Create a parser that feeds off the token stream
-            var parser = new SearchExprParser(tokens);
-            return parser.Search();
+            return SearchExprParser.Parse(str);
         }
         [Test]
         public void Star() 

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 ./find/FindEval.g 2012-12-26 13:15:54
+// $ANTLR 3.4 ./find/FindEval.g 2012-12-27 00:06:38
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -37,19 +37,11 @@ namespace  find
 public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "DEPTH", "EQ", "ESC", "HEX_DIGIT", "INAME", "INTEGER", "IREGEX", "LPAREN", "NAME", "NOT", "OR", "REGEX", "RPAREN", "SIZE", "STRING_LITERAL", "TYPE", "UNQOTED_LITERAL", "WS", "'G'", "'M'", "'b'", "'c'", "'d'", "'directory'", "'f'", "'file'", "'k'", "'w'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "DEPTH", "EQ", "ESC", "HEX_DIGIT", "INAME", "INTEGER", "IREGEX", "LPAREN", "NAME", "NOT", "OR", "REGEX", "RPAREN", "SIZE", "SIZEPOSTFIX", "STRING_LITERAL", "TYPE", "UNQOTED_LITERAL", "WS", "'d'", "'f'", "'t'"
 	};
 	public const int EOF=-1;
-	public const int T__23=23;
 	public const int T__24=24;
 	public const int T__25=25;
-	public const int T__26=26;
-	public const int T__27=27;
-	public const int T__28=28;
-	public const int T__29=29;
-	public const int T__30=30;
-	public const int T__31=31;
-	public const int T__32=32;
 	public const int AND=4;
 	public const int DEPTH=5;
 	public const int EQ=6;
@@ -65,10 +57,12 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 	public const int REGEX=16;
 	public const int RPAREN=17;
 	public const int SIZE=18;
-	public const int STRING_LITERAL=19;
-	public const int TYPE=20;
-	public const int UNQOTED_LITERAL=21;
-	public const int WS=22;
+	public const int SIZEPOSTFIX=19;
+	public const int STRING_LITERAL=20;
+	public const int TYPE=21;
+	public const int UNQOTED_LITERAL=22;
+	public const int WS=23;
+	public const int T__26=26;
 
 	public FindEval(ITreeNodeStream input)
 		: this(input, new RecognizerSharedState())
@@ -117,7 +111,7 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 				try { DebugEnterDecision(1, false);
 				int LA1_0 = input.LA(1);
 
-				if ((LA1_0==AND||LA1_0==INAME||(LA1_0>=IREGEX && LA1_0<=REGEX)))
+				if (((LA1_0>=AND && LA1_0<=DEPTH)||LA1_0==INAME||(LA1_0>=IREGEX && LA1_0<=REGEX)||LA1_0==SIZE||LA1_0==TYPE))
 				{
 					alt1 = 1;
 				}
@@ -175,7 +169,7 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_expression();
 
 	// $ANTLR start "expression"
-	// ./find/FindEval.g:16:1: expression : e= expr ;
+	// ./find/FindEval.g:16:1: expression : (e= expr |n= other );
 	[GrammarRule("expression")]
 	private void expression()
 	{
@@ -185,23 +179,59 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 		Matcher e = default(Matcher);
 
 		try { DebugEnterRule(GrammarFileName, "expression");
-		DebugLocation(16, 20);
+		DebugLocation(16, 10);
 		try
 		{
-			// ./find/FindEval.g:17:2: (e= expr )
-			DebugEnterAlt(1);
-			// ./find/FindEval.g:17:4: e= expr
-			{
-			DebugLocation(17, 5);
-			PushFollow(Follow._expr_in_expression60);
-			e=expr();
-			PopFollow();
+			// ./find/FindEval.g:17:2: (e= expr |n= other )
+			int alt2=2;
+			try { DebugEnterDecision(2, false);
+			int LA2_0 = input.LA(1);
 
-			DebugLocation(17, 11);
-			 Add(e);
+			if ((LA2_0==AND||LA2_0==INAME||(LA2_0>=IREGEX && LA2_0<=REGEX)||LA2_0==SIZE||LA2_0==TYPE))
+			{
+				alt2 = 1;
+			}
+			else if ((LA2_0==DEPTH))
+			{
+				alt2 = 2;
+			}
+			else
+			{
+				NoViableAltException nvae = new NoViableAltException("", 2, 0, input);
+				DebugRecognitionException(nvae);
+				throw nvae;
+			}
+			} finally { DebugExitDecision(2); }
+			switch (alt2)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// ./find/FindEval.g:17:4: e= expr
+				{
+				DebugLocation(17, 5);
+				PushFollow(Follow._expr_in_expression60);
+				e=expr();
+				PopFollow();
+
+				DebugLocation(17, 11);
+				 Add(e);
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// ./find/FindEval.g:18:4: n= other
+				{
+				DebugLocation(18, 5);
+				PushFollow(Follow._other_in_expression69);
+				other();
+				PopFollow();
+
+
+				}
+				break;
 
 			}
-
 		}
 		catch (RecognitionException re)
 		{
@@ -214,7 +244,7 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 			LeaveRule("expression", 2);
 			LeaveRule_expression();
 		}
-		DebugLocation(17, 20);
+		DebugLocation(18, 10);
 		} finally { DebugExitRule(GrammarFileName, "expression"); }
 		return;
 
@@ -225,7 +255,7 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_expr();
 
 	// $ANTLR start "expr"
-	// ./find/FindEval.g:19:1: expr returns [Matcher value] : ( ^( NOT a= expr ) | ^( OR a= expr b= expr ) | ^( AND a= expr b= expr ) | ^( LPAREN a= expr RPAREN ) | ^( NAME EQ v= val ) | ^( INAME EQ v= val ) | ^( REGEX EQ v= val ) | ^( IREGEX EQ v= val ) );
+	// ./find/FindEval.g:20:1: expr returns [Matcher value] : ( ^( NOT a= expr ) | ^( OR a= expr b= expr ) | ^( AND a= expr b= expr ) | ^( LPAREN a= expr RPAREN ) | ^( NAME EQ v= val ) | ^( INAME EQ v= val ) | ^( REGEX EQ v= val ) | ^( IREGEX EQ v= val ) | ^( SIZE EQ i= integer p= sizepostfix ) | ^( TYPE EQ t= type ) );
 	[GrammarRule("expr")]
 	private Matcher expr()
 	{
@@ -238,228 +268,217 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 		Matcher a = default(Matcher);
 		Matcher b = default(Matcher);
 		string v = default(string);
+		long i = default(long);
+		string p = default(string);
+		string t = default(string);
 
 		try { DebugEnterRule(GrammarFileName, "expr");
-		DebugLocation(19, 1);
+		DebugLocation(20, 1);
 		try
 		{
-			// ./find/FindEval.g:20:5: ( ^( NOT a= expr ) | ^( OR a= expr b= expr ) | ^( AND a= expr b= expr ) | ^( LPAREN a= expr RPAREN ) | ^( NAME EQ v= val ) | ^( INAME EQ v= val ) | ^( REGEX EQ v= val ) | ^( IREGEX EQ v= val ) )
-			int alt2=8;
-			try { DebugEnterDecision(2, false);
+			// ./find/FindEval.g:21:5: ( ^( NOT a= expr ) | ^( OR a= expr b= expr ) | ^( AND a= expr b= expr ) | ^( LPAREN a= expr RPAREN ) | ^( NAME EQ v= val ) | ^( INAME EQ v= val ) | ^( REGEX EQ v= val ) | ^( IREGEX EQ v= val ) | ^( SIZE EQ i= integer p= sizepostfix ) | ^( TYPE EQ t= type ) )
+			int alt3=10;
+			try { DebugEnterDecision(3, false);
 			switch (input.LA(1))
 			{
 			case NOT:
 				{
-				alt2 = 1;
+				alt3 = 1;
 				}
 				break;
 			case OR:
 				{
-				alt2 = 2;
+				alt3 = 2;
 				}
 				break;
 			case AND:
 				{
-				alt2 = 3;
+				alt3 = 3;
 				}
 				break;
 			case LPAREN:
 				{
-				alt2 = 4;
+				alt3 = 4;
 				}
 				break;
 			case NAME:
 				{
-				alt2 = 5;
+				alt3 = 5;
 				}
 				break;
 			case INAME:
 				{
-				alt2 = 6;
+				alt3 = 6;
 				}
 				break;
 			case REGEX:
 				{
-				alt2 = 7;
+				alt3 = 7;
 				}
 				break;
 			case IREGEX:
 				{
-				alt2 = 8;
+				alt3 = 8;
+				}
+				break;
+			case SIZE:
+				{
+				alt3 = 9;
+				}
+				break;
+			case TYPE:
+				{
+				alt3 = 10;
 				}
 				break;
 			default:
 				{
-					NoViableAltException nvae = new NoViableAltException("", 2, 0, input);
+					NoViableAltException nvae = new NoViableAltException("", 3, 0, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(2); }
-			switch (alt2)
+			} finally { DebugExitDecision(3); }
+			switch (alt3)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// ./find/FindEval.g:20:9: ^( NOT a= expr )
+				// ./find/FindEval.g:21:9: ^( NOT a= expr )
 				{
-				DebugLocation(20, 9);
-				DebugLocation(20, 11);
-				Match(input,NOT,Follow._NOT_in_expr81); 
+				DebugLocation(21, 9);
+				DebugLocation(21, 11);
+				Match(input,NOT,Follow._NOT_in_expr88); 
 
 				Match(input, TokenTypes.Down, null); 
-				DebugLocation(20, 16);
-				PushFollow(Follow._expr_in_expr85);
+				DebugLocation(21, 16);
+				PushFollow(Follow._expr_in_expr92);
 				a=expr();
 				PopFollow();
 
 
 				Match(input, TokenTypes.Up, null); 
 
-				DebugLocation(20, 23);
+				DebugLocation(21, 23);
 				value = Not(a);
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// ./find/FindEval.g:21:9: ^( OR a= expr b= expr )
+				// ./find/FindEval.g:22:9: ^( OR a= expr b= expr )
 				{
-				DebugLocation(21, 9);
-				DebugLocation(21, 11);
-				Match(input,OR,Follow._OR_in_expr99); 
+				DebugLocation(22, 9);
+				DebugLocation(22, 11);
+				Match(input,OR,Follow._OR_in_expr106); 
 
 				Match(input, TokenTypes.Down, null); 
-				DebugLocation(21, 15);
-				PushFollow(Follow._expr_in_expr103);
+				DebugLocation(22, 15);
+				PushFollow(Follow._expr_in_expr110);
 				a=expr();
 				PopFollow();
 
-				DebugLocation(21, 22);
-				PushFollow(Follow._expr_in_expr107);
+				DebugLocation(22, 22);
+				PushFollow(Follow._expr_in_expr114);
 				b=expr();
 				PopFollow();
 
 
 				Match(input, TokenTypes.Up, null); 
 
-				DebugLocation(21, 29);
+				DebugLocation(22, 29);
 				value = Or(a,b);
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// ./find/FindEval.g:22:9: ^( AND a= expr b= expr )
+				// ./find/FindEval.g:23:9: ^( AND a= expr b= expr )
 				{
-				DebugLocation(22, 9);
-				DebugLocation(22, 11);
-				Match(input,AND,Follow._AND_in_expr121); 
+				DebugLocation(23, 9);
+				DebugLocation(23, 11);
+				Match(input,AND,Follow._AND_in_expr128); 
 
 				Match(input, TokenTypes.Down, null); 
-				DebugLocation(22, 16);
-				PushFollow(Follow._expr_in_expr125);
+				DebugLocation(23, 16);
+				PushFollow(Follow._expr_in_expr132);
 				a=expr();
 				PopFollow();
 
-				DebugLocation(22, 23);
-				PushFollow(Follow._expr_in_expr129);
+				DebugLocation(23, 23);
+				PushFollow(Follow._expr_in_expr136);
 				b=expr();
 				PopFollow();
 
 
 				Match(input, TokenTypes.Up, null); 
 
-				DebugLocation(22, 30);
+				DebugLocation(23, 30);
 				value = And(a,b);
 
 				}
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// ./find/FindEval.g:23:9: ^( LPAREN a= expr RPAREN )
+				// ./find/FindEval.g:24:9: ^( LPAREN a= expr RPAREN )
 				{
-				DebugLocation(23, 9);
-				DebugLocation(23, 11);
-				Match(input,LPAREN,Follow._LPAREN_in_expr143); 
+				DebugLocation(24, 9);
+				DebugLocation(24, 11);
+				Match(input,LPAREN,Follow._LPAREN_in_expr150); 
 
 				Match(input, TokenTypes.Down, null); 
-				DebugLocation(23, 19);
-				PushFollow(Follow._expr_in_expr147);
+				DebugLocation(24, 19);
+				PushFollow(Follow._expr_in_expr154);
 				a=expr();
 				PopFollow();
 
-				DebugLocation(23, 25);
-				Match(input,RPAREN,Follow._RPAREN_in_expr149); 
+				DebugLocation(24, 25);
+				Match(input,RPAREN,Follow._RPAREN_in_expr156); 
 
 				Match(input, TokenTypes.Up, null); 
 
-				DebugLocation(23, 33);
+				DebugLocation(24, 33);
 				value = a;
 
 				}
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// ./find/FindEval.g:24:9: ^( NAME EQ v= val )
+				// ./find/FindEval.g:25:9: ^( NAME EQ v= val )
 				{
-				DebugLocation(24, 9);
-				DebugLocation(24, 11);
-				Match(input,NAME,Follow._NAME_in_expr163); 
+				DebugLocation(25, 9);
+				DebugLocation(25, 11);
+				Match(input,NAME,Follow._NAME_in_expr170); 
 
 				Match(input, TokenTypes.Down, null); 
-				DebugLocation(24, 16);
-				Match(input,EQ,Follow._EQ_in_expr165); 
-				DebugLocation(24, 20);
-				PushFollow(Follow._val_in_expr169);
+				DebugLocation(25, 16);
+				Match(input,EQ,Follow._EQ_in_expr172); 
+				DebugLocation(25, 20);
+				PushFollow(Follow._val_in_expr176);
 				v=val();
 				PopFollow();
 
 
 				Match(input, TokenTypes.Up, null); 
 
-				DebugLocation(24, 28);
+				DebugLocation(25, 28);
 				 value = NameMatch(v,false);
 
 				}
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// ./find/FindEval.g:25:6: ^( INAME EQ v= val )
-				{
-				DebugLocation(25, 6);
-				DebugLocation(25, 8);
-				Match(input,INAME,Follow._INAME_in_expr182); 
-
-				Match(input, TokenTypes.Down, null); 
-				DebugLocation(25, 14);
-				Match(input,EQ,Follow._EQ_in_expr184); 
-				DebugLocation(25, 18);
-				PushFollow(Follow._val_in_expr188);
-				v=val();
-				PopFollow();
-
-
-				Match(input, TokenTypes.Up, null); 
-
-				DebugLocation(25, 25);
-				 value = NameMatch(v,true);
-
-				}
-				break;
-			case 7:
-				DebugEnterAlt(7);
-				// ./find/FindEval.g:26:6: ^( REGEX EQ v= val )
+				// ./find/FindEval.g:26:6: ^( INAME EQ v= val )
 				{
 				DebugLocation(26, 6);
 				DebugLocation(26, 8);
-				Match(input,REGEX,Follow._REGEX_in_expr200); 
+				Match(input,INAME,Follow._INAME_in_expr189); 
 
 				Match(input, TokenTypes.Down, null); 
 				DebugLocation(26, 14);
-				Match(input,EQ,Follow._EQ_in_expr202); 
+				Match(input,EQ,Follow._EQ_in_expr191); 
 				DebugLocation(26, 18);
-				PushFollow(Follow._val_in_expr206);
+				PushFollow(Follow._val_in_expr195);
 				v=val();
 				PopFollow();
 
@@ -467,23 +486,23 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 				Match(input, TokenTypes.Up, null); 
 
 				DebugLocation(26, 25);
-				 value = RegNameMatch(v,false);
+				 value = NameMatch(v,true);
 
 				}
 				break;
-			case 8:
-				DebugEnterAlt(8);
-				// ./find/FindEval.g:27:6: ^( IREGEX EQ v= val )
+			case 7:
+				DebugEnterAlt(7);
+				// ./find/FindEval.g:27:6: ^( REGEX EQ v= val )
 				{
 				DebugLocation(27, 6);
 				DebugLocation(27, 8);
-				Match(input,IREGEX,Follow._IREGEX_in_expr218); 
+				Match(input,REGEX,Follow._REGEX_in_expr207); 
 
 				Match(input, TokenTypes.Down, null); 
-				DebugLocation(27, 15);
-				Match(input,EQ,Follow._EQ_in_expr220); 
-				DebugLocation(27, 19);
-				PushFollow(Follow._val_in_expr224);
+				DebugLocation(27, 14);
+				Match(input,EQ,Follow._EQ_in_expr209); 
+				DebugLocation(27, 18);
+				PushFollow(Follow._val_in_expr213);
 				v=val();
 				PopFollow();
 
@@ -491,7 +510,84 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 				Match(input, TokenTypes.Up, null); 
 
 				DebugLocation(27, 25);
+				 value = RegNameMatch(v,false);
+
+				}
+				break;
+			case 8:
+				DebugEnterAlt(8);
+				// ./find/FindEval.g:28:6: ^( IREGEX EQ v= val )
+				{
+				DebugLocation(28, 6);
+				DebugLocation(28, 8);
+				Match(input,IREGEX,Follow._IREGEX_in_expr225); 
+
+				Match(input, TokenTypes.Down, null); 
+				DebugLocation(28, 15);
+				Match(input,EQ,Follow._EQ_in_expr227); 
+				DebugLocation(28, 19);
+				PushFollow(Follow._val_in_expr231);
+				v=val();
+				PopFollow();
+
+
+				Match(input, TokenTypes.Up, null); 
+
+				DebugLocation(28, 25);
 				 value = RegNameMatch(v,true);
+
+				}
+				break;
+			case 9:
+				DebugEnterAlt(9);
+				// ./find/FindEval.g:29:6: ^( SIZE EQ i= integer p= sizepostfix )
+				{
+				DebugLocation(29, 6);
+				DebugLocation(29, 8);
+				Match(input,SIZE,Follow._SIZE_in_expr242); 
+
+				Match(input, TokenTypes.Down, null); 
+				DebugLocation(29, 13);
+				Match(input,EQ,Follow._EQ_in_expr244); 
+				DebugLocation(29, 17);
+				PushFollow(Follow._integer_in_expr248);
+				i=integer();
+				PopFollow();
+
+				DebugLocation(29, 27);
+				PushFollow(Follow._sizepostfix_in_expr252);
+				p=sizepostfix();
+				PopFollow();
+
+
+				Match(input, TokenTypes.Up, null); 
+
+				DebugLocation(29, 41);
+				value = Size(i,p);
+
+				}
+				break;
+			case 10:
+				DebugEnterAlt(10);
+				// ./find/FindEval.g:30:6: ^( TYPE EQ t= type )
+				{
+				DebugLocation(30, 6);
+				DebugLocation(30, 8);
+				Match(input,TYPE,Follow._TYPE_in_expr263); 
+
+				Match(input, TokenTypes.Down, null); 
+				DebugLocation(30, 13);
+				Match(input,EQ,Follow._EQ_in_expr265); 
+				DebugLocation(30, 17);
+				PushFollow(Follow._type_in_expr269);
+				t=type();
+				PopFollow();
+
+
+				Match(input, TokenTypes.Up, null); 
+
+				DebugLocation(30, 24);
+				 value = Type(t);
 
 				}
 				break;
@@ -509,24 +605,247 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 			LeaveRule("expr", 3);
 			LeaveRule_expr();
 		}
-		DebugLocation(28, 1);
+		DebugLocation(31, 1);
 		} finally { DebugExitRule(GrammarFileName, "expr"); }
 		return value;
 
 	}
 	// $ANTLR end "expr"
 
+	partial void EnterRule_other();
+	partial void LeaveRule_other();
+
+	// $ANTLR start "other"
+	// ./find/FindEval.g:32:1: other : ^( DEPTH EQ i= integer ) ;
+	[GrammarRule("other")]
+	private void other()
+	{
+		EnterRule_other();
+		EnterRule("other", 4);
+		TraceIn("other", 4);
+		long i = default(long);
+
+		try { DebugEnterRule(GrammarFileName, "other");
+		DebugLocation(32, 37);
+		try
+		{
+			// ./find/FindEval.g:33:2: ( ^( DEPTH EQ i= integer ) )
+			DebugEnterAlt(1);
+			// ./find/FindEval.g:33:4: ^( DEPTH EQ i= integer )
+			{
+			DebugLocation(33, 4);
+			DebugLocation(33, 6);
+			Match(input,DEPTH,Follow._DEPTH_in_other283); 
+
+			Match(input, TokenTypes.Down, null); 
+			DebugLocation(33, 12);
+			Match(input,EQ,Follow._EQ_in_other285); 
+			DebugLocation(33, 16);
+			PushFollow(Follow._integer_in_other289);
+			i=integer();
+			PopFollow();
+
+
+			Match(input, TokenTypes.Up, null); 
+
+			DebugLocation(33, 26);
+			 Depth(i);
+
+			}
+
+		}
+		catch (RecognitionException re)
+		{
+			ReportError(re);
+			Recover(input,re);
+		}
+		finally
+		{
+			TraceOut("other", 4);
+			LeaveRule("other", 4);
+			LeaveRule_other();
+		}
+		DebugLocation(33, 37);
+		} finally { DebugExitRule(GrammarFileName, "other"); }
+		return;
+
+	}
+	// $ANTLR end "other"
+
+	partial void EnterRule_sizepostfix();
+	partial void LeaveRule_sizepostfix();
+
+	// $ANTLR start "sizepostfix"
+	// ./find/FindEval.g:35:1: sizepostfix returns [string value] : s= SIZEPOSTFIX ;
+	[GrammarRule("sizepostfix")]
+	private string sizepostfix()
+	{
+		EnterRule_sizepostfix();
+		EnterRule("sizepostfix", 5);
+		TraceIn("sizepostfix", 5);
+		string value = default(string);
+
+
+		CommonTree s = default(CommonTree);
+
+		try { DebugEnterRule(GrammarFileName, "sizepostfix");
+		DebugLocation(35, 33);
+		try
+		{
+			// ./find/FindEval.g:36:2: (s= SIZEPOSTFIX )
+			DebugEnterAlt(1);
+			// ./find/FindEval.g:36:4: s= SIZEPOSTFIX
+			{
+			DebugLocation(36, 5);
+			s=(CommonTree)Match(input,SIZEPOSTFIX,Follow._SIZEPOSTFIX_in_sizepostfix307); 
+			DebugLocation(36, 18);
+			value =s.Text;
+
+			}
+
+		}
+		catch (RecognitionException re)
+		{
+			ReportError(re);
+			Recover(input,re);
+		}
+		finally
+		{
+			TraceOut("sizepostfix", 5);
+			LeaveRule("sizepostfix", 5);
+			LeaveRule_sizepostfix();
+		}
+		DebugLocation(36, 33);
+		} finally { DebugExitRule(GrammarFileName, "sizepostfix"); }
+		return value;
+
+	}
+	// $ANTLR end "sizepostfix"
+
+	partial void EnterRule_integer();
+	partial void LeaveRule_integer();
+
+	// $ANTLR start "integer"
+	// ./find/FindEval.g:38:1: integer returns [long value] : i= INTEGER ;
+	[GrammarRule("integer")]
+	private long integer()
+	{
+		EnterRule_integer();
+		EnterRule("integer", 6);
+		TraceIn("integer", 6);
+		long value = default(long);
+
+
+		CommonTree i = default(CommonTree);
+
+		try { DebugEnterRule(GrammarFileName, "integer");
+		DebugLocation(38, 42);
+		try
+		{
+			// ./find/FindEval.g:39:2: (i= INTEGER )
+			DebugEnterAlt(1);
+			// ./find/FindEval.g:39:4: i= INTEGER
+			{
+			DebugLocation(39, 5);
+			i=(CommonTree)Match(input,INTEGER,Follow._INTEGER_in_integer324); 
+			DebugLocation(39, 14);
+			value =Int64.Parse(i.Text);
+
+			}
+
+		}
+		catch (RecognitionException re)
+		{
+			ReportError(re);
+			Recover(input,re);
+		}
+		finally
+		{
+			TraceOut("integer", 6);
+			LeaveRule("integer", 6);
+			LeaveRule_integer();
+		}
+		DebugLocation(39, 42);
+		} finally { DebugExitRule(GrammarFileName, "integer"); }
+		return value;
+
+	}
+	// $ANTLR end "integer"
+
+	partial void EnterRule_type();
+	partial void LeaveRule_type();
+
+	// $ANTLR start "type"
+	// ./find/FindEval.g:41:1: type returns [string value] : t= ( 'f' | 't' ) ;
+	[GrammarRule("type")]
+	private string type()
+	{
+		EnterRule_type();
+		EnterRule("type", 7);
+		TraceIn("type", 7);
+		string value = default(string);
+
+
+		CommonTree t = default(CommonTree);
+
+		try { DebugEnterRule(GrammarFileName, "type");
+		DebugLocation(41, 31);
+		try
+		{
+			// ./find/FindEval.g:42:2: (t= ( 'f' | 't' ) )
+			DebugEnterAlt(1);
+			// ./find/FindEval.g:42:4: t= ( 'f' | 't' )
+			{
+			DebugLocation(42, 5);
+
+			t=(CommonTree)input.LT(1);
+			if ((input.LA(1)>=25 && input.LA(1)<=26))
+			{
+				input.Consume();
+				state.errorRecovery=false;
+			}
+			else
+			{
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				DebugRecognitionException(mse);
+				throw mse;
+			}
+
+			DebugLocation(42, 16);
+			value =t.Text;
+
+			}
+
+		}
+		catch (RecognitionException re)
+		{
+			ReportError(re);
+			Recover(input,re);
+		}
+		finally
+		{
+			TraceOut("type", 7);
+			LeaveRule("type", 7);
+			LeaveRule_type();
+		}
+		DebugLocation(42, 31);
+		} finally { DebugExitRule(GrammarFileName, "type"); }
+		return value;
+
+	}
+	// $ANTLR end "type"
+
 	partial void EnterRule_val();
 	partial void LeaveRule_val();
 
 	// $ANTLR start "val"
-	// ./find/FindEval.g:30:1: val returns [string value] : (q= STRING_LITERAL |v= UNQOTED_LITERAL );
+	// ./find/FindEval.g:44:1: val returns [string value] : (q= STRING_LITERAL |v= UNQOTED_LITERAL );
 	[GrammarRule("val")]
 	private string val()
 	{
 		EnterRule_val();
-		EnterRule("val", 4);
-		TraceIn("val", 4);
+		EnterRule("val", 8);
+		TraceIn("val", 8);
 		string value = default(string);
 
 
@@ -534,49 +853,49 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 		CommonTree v = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "val");
-		DebugLocation(30, 37);
+		DebugLocation(44, 37);
 		try
 		{
-			// ./find/FindEval.g:31:2: (q= STRING_LITERAL |v= UNQOTED_LITERAL )
-			int alt3=2;
-			try { DebugEnterDecision(3, false);
-			int LA3_0 = input.LA(1);
+			// ./find/FindEval.g:45:2: (q= STRING_LITERAL |v= UNQOTED_LITERAL )
+			int alt4=2;
+			try { DebugEnterDecision(4, false);
+			int LA4_0 = input.LA(1);
 
-			if ((LA3_0==STRING_LITERAL))
+			if ((LA4_0==STRING_LITERAL))
 			{
-				alt3 = 1;
+				alt4 = 1;
 			}
-			else if ((LA3_0==UNQOTED_LITERAL))
+			else if ((LA4_0==UNQOTED_LITERAL))
 			{
-				alt3 = 2;
+				alt4 = 2;
 			}
 			else
 			{
-				NoViableAltException nvae = new NoViableAltException("", 3, 0, input);
+				NoViableAltException nvae = new NoViableAltException("", 4, 0, input);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(3); }
-			switch (alt3)
+			} finally { DebugExitDecision(4); }
+			switch (alt4)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// ./find/FindEval.g:31:4: q= STRING_LITERAL
+				// ./find/FindEval.g:45:4: q= STRING_LITERAL
 				{
-				DebugLocation(31, 5);
-				q=(CommonTree)Match(input,STRING_LITERAL,Follow._STRING_LITERAL_in_val244); 
-				DebugLocation(31, 21);
+				DebugLocation(45, 5);
+				q=(CommonTree)Match(input,STRING_LITERAL,Follow._STRING_LITERAL_in_val362); 
+				DebugLocation(45, 21);
 				 value = q.Text.Substring(1,q.Text.Length-2);
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// ./find/FindEval.g:32:4: v= UNQOTED_LITERAL
+				// ./find/FindEval.g:46:4: v= UNQOTED_LITERAL
 				{
-				DebugLocation(32, 5);
-				v=(CommonTree)Match(input,UNQOTED_LITERAL,Follow._UNQOTED_LITERAL_in_val253); 
-				DebugLocation(32, 22);
+				DebugLocation(46, 5);
+				v=(CommonTree)Match(input,UNQOTED_LITERAL,Follow._UNQOTED_LITERAL_in_val371); 
+				DebugLocation(46, 22);
 				value =v.Text;
 
 				}
@@ -591,11 +910,11 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("val", 4);
-			LeaveRule("val", 4);
+			TraceOut("val", 8);
+			LeaveRule("val", 8);
 			LeaveRule_val();
 		}
-		DebugLocation(32, 37);
+		DebugLocation(46, 37);
 		} finally { DebugExitRule(GrammarFileName, "val"); }
 		return value;
 
@@ -607,33 +926,47 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 	#region Follow sets
 	private static class Follow
 	{
-		public static readonly BitSet _expression_in_commandline48 = new BitSet(new ulong[]{0x1FA12UL});
+		public static readonly BitSet _expression_in_commandline48 = new BitSet(new ulong[]{0x25FA32UL});
 		public static readonly BitSet _expr_in_expression60 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _NOT_in_expr81 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr85 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _OR_in_expr99 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr103 = new BitSet(new ulong[]{0x1FA10UL});
-		public static readonly BitSet _expr_in_expr107 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _AND_in_expr121 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr125 = new BitSet(new ulong[]{0x1FA10UL});
-		public static readonly BitSet _expr_in_expr129 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _LPAREN_in_expr143 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr147 = new BitSet(new ulong[]{0x20000UL});
-		public static readonly BitSet _RPAREN_in_expr149 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _NAME_in_expr163 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _EQ_in_expr165 = new BitSet(new ulong[]{0x280000UL});
-		public static readonly BitSet _val_in_expr169 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _INAME_in_expr182 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _EQ_in_expr184 = new BitSet(new ulong[]{0x280000UL});
-		public static readonly BitSet _val_in_expr188 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _REGEX_in_expr200 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _EQ_in_expr202 = new BitSet(new ulong[]{0x280000UL});
-		public static readonly BitSet _val_in_expr206 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _IREGEX_in_expr218 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _EQ_in_expr220 = new BitSet(new ulong[]{0x280000UL});
-		public static readonly BitSet _val_in_expr224 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _STRING_LITERAL_in_val244 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _UNQOTED_LITERAL_in_val253 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _other_in_expression69 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _NOT_in_expr88 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr92 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _OR_in_expr106 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr110 = new BitSet(new ulong[]{0x25FA10UL});
+		public static readonly BitSet _expr_in_expr114 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _AND_in_expr128 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr132 = new BitSet(new ulong[]{0x25FA10UL});
+		public static readonly BitSet _expr_in_expr136 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _LPAREN_in_expr150 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr154 = new BitSet(new ulong[]{0x20000UL});
+		public static readonly BitSet _RPAREN_in_expr156 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _NAME_in_expr170 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _EQ_in_expr172 = new BitSet(new ulong[]{0x500000UL});
+		public static readonly BitSet _val_in_expr176 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _INAME_in_expr189 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _EQ_in_expr191 = new BitSet(new ulong[]{0x500000UL});
+		public static readonly BitSet _val_in_expr195 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _REGEX_in_expr207 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _EQ_in_expr209 = new BitSet(new ulong[]{0x500000UL});
+		public static readonly BitSet _val_in_expr213 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _IREGEX_in_expr225 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _EQ_in_expr227 = new BitSet(new ulong[]{0x500000UL});
+		public static readonly BitSet _val_in_expr231 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SIZE_in_expr242 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _EQ_in_expr244 = new BitSet(new ulong[]{0x400UL});
+		public static readonly BitSet _integer_in_expr248 = new BitSet(new ulong[]{0x80000UL});
+		public static readonly BitSet _sizepostfix_in_expr252 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _TYPE_in_expr263 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _EQ_in_expr265 = new BitSet(new ulong[]{0x6000000UL});
+		public static readonly BitSet _type_in_expr269 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _DEPTH_in_other283 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _EQ_in_other285 = new BitSet(new ulong[]{0x400UL});
+		public static readonly BitSet _integer_in_other289 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SIZEPOSTFIX_in_sizepostfix307 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _INTEGER_in_integer324 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _set_in_type341 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _STRING_LITERAL_in_val362 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _UNQOTED_LITERAL_in_val371 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }

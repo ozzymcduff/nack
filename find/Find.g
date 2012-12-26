@@ -35,8 +35,8 @@ argument
 	| INAME^ WS? EQ WS? value 
 	| REGEX^ WS? EQ WS? value 
 	| IREGEX^ WS? EQ WS? value  
-	| TYPE^ WS? EQ WS? ('f'|'d'|'file'|'directory') 
-	| SIZE^ WS? EQ WS? INTEGER WS? ('c'|'w'|'k'|'M'|'G'|'b')? 
+	| TYPE^ WS? EQ WS? ('f'|'d') 
+	| SIZE^ WS? EQ WS? INTEGER WS? SIZEPOSTFIX? 
 	| DEPTH^ WS? EQ WS? INTEGER ;
 
 value
@@ -56,6 +56,7 @@ AND:  '-AND'| '-and' | '-&&';
 OR:  '-OR' | '-or' |'-||';
 NOT :  '-!' | '-NOT' | '-not';
 INTEGER: ('0'..'9')+;
+SIZEPOSTFIX: ('c'|'w'|'k'|'M'|'G'|'b');
 STRING_LITERAL
 	:	'"' (ESC|~('"'|'\\'|'\n'|'\r'))* '"'
 	;

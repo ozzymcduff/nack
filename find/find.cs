@@ -8,12 +8,13 @@ using System.Text.RegularExpressions;
 using System.Reflection;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
+using Matcher = System.Func<string, find.find.Type, bool>;
 
 namespace find
 {
     public class find
     {
-        static IEnumerable<string> Search(string root, Func<string, Type, bool> onsearch, int? maxdepth = null, string searchexpr=null)
+        static IEnumerable<string> Search(string root, Matcher onsearch, long? maxdepth = null, string searchexpr=null)
         {
             var dirs = new Queue<Tuple<string, int>>();
             dirs.Enqueue(new Tuple<string, int>(root, 0));
@@ -37,7 +38,7 @@ namespace find
 
                 if (paths != null && paths.Length > 0)
                 {
-                    foreach (string file in paths.Where(f => onsearch(f, Type.File)))
+                    foreach (string file in paths.Where(f => onsearch(f,Type.File)))
                     {
                         yield return file;
                     }
@@ -77,26 +78,8 @@ namespace find
             var s = new MemoryStream();
             var tobeparsed = String.Join(" ", args.Skip(1));
             if (debug) Console.WriteLine(tobeparsed);
-            var w = new StreamWriter(s);
             
-            w.Write(tobeparsed);
-            
-            w.Flush();
-            
-            s.Position = 0;
-            ANTLRInputStream input = new ANTLRInputStream(s);
-            // Create an ExprLexer that feeds from that stream
-            FindLexer lexer = new FindLexer(input);
-            // Create a stream of tokens fed by the lexer
-            CommonTokenStream tokens = new CommonTokenStream(lexer);
-            // Create a parser that feeds off the token stream
-            FindParser parser = new FindParser(tokens);
-            
-            var c= parser.CommandLine();
-            //Console.WriteLine("c:"+(c==null?"null":c.Text));
-            var cstream = new CommonTreeNodeStream(c);
-            var eval = new FindEval(cstream);
-            var cli= eval.CommandLine();
+            var cli= FindEval.Parse(tobeparsed);
             //Console.WriteLine(cli.onsearch.ToString());
             //Func<string, Type, bool> onsearch = (string s, Type t) => true;
             /*string searchexpr = null;
@@ -104,27 +87,11 @@ namespace find
             {
                 switch (option.Key)
                 {
-                    case "name":
-                    case "iname":
-                        {
-                            searchexpr = (string)option.Value;
-                            break;
-                        }
                     case "type":
                         {
                             var _onsearch = onsearch;
                             var type = (Type)option.Value;
                             onsearch = (string s, Type t) => _onsearch(s, t) && t==type;
-                            break;
-                        }
-                    case "depth":
-                        maxdepth = (int)option.Value;
-                        break;
-                    case "size":
-                        {
-                            var _onsearch = onsearch;
-                            var size = (long)option.Value;
-                            onsearch = (string s, Type t) => _onsearch(s, t) && t == Type.File && new FileInfo(s).Length>size;
                             break;
                         }
                     case "version":
@@ -158,33 +125,11 @@ namespace find
             Unknown = 0,
             File = 1,
             Directory = 2
-
         }
-
-        private object GetSize(string v)
-        {
-            int factor = 512;
-            switch (v.Last())
-            {
-                case 'c'://'c'    for bytes
-                    factor = 1; break;
-                case 'w'://'w'    for two-byte words
-                    factor = 2; break;
-                case 'k'://'k'    for Kilobytes (units of 1024 bytes)
-                    factor = 1024; break;
-                case 'M'://'M'    for Megabytes (units of 1048576 bytes)
-                    factor = 1048576; break;
-                case 'G'://'G'    for Gigabytes (units of 1073741824 bytes)
-                    factor = 1073741824; break;
-                case 'b'://'b'    for 512-byte blocks (this is the default if no suffix  is used)
-                    factor = 512; break;
-            }
-            if (!Char.IsNumber(v.Last())) 
-            {
-                v = v.Substring(0, v.Length - 1);
-            }
-            return factor * Int64.Parse(v);
-        }
-
+    }
+    public static class FindExtensions
+    {
+        public static bool IsFile(this find.Type self) { return self == find.Type.File; }
+        public static bool IsDirectory(this find.Type self) { return self == find.Type.Directory; }
     }
 }
