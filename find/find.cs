@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NDesk.Options;
 using System.IO;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
 using System.Reflection;
+using Antlr.Runtime;
+using Antlr.Runtime.Tree;
 
 namespace find
 {
-    class find
+    public class find
     {
         static IEnumerable<string> Search(string root, Func<string, Type, bool> onsearch, int? maxdepth = null, string searchexpr=null)
         {
@@ -67,18 +68,38 @@ namespace find
                 }
             }
         }
-
+        public static bool debug = false;
         static void Main(string[] args)
         {
             var p = new find();
-            OptionSet getopt_specs = p.Options();
-
-            var parsed = getopt_specs.Parse(args);
+            
             var path = args.FirstOrDefault();
-            //Console.WriteLine(String.Join(", ", opt.Select(o => o.Key + "=" + o.Value)));
-            int? maxdepth = null;
-            Func<string, Type, bool> onsearch = (string s, Type t) => true;
-            string searchexpr = null;
+            var s = new MemoryStream();
+            var tobeparsed = String.Join(" ", args.Skip(1));
+            if (debug) Console.WriteLine(tobeparsed);
+            var w = new StreamWriter(s);
+            
+            w.Write(tobeparsed);
+            
+            w.Flush();
+            
+            s.Position = 0;
+            ANTLRInputStream input = new ANTLRInputStream(s);
+            // Create an ExprLexer that feeds from that stream
+            FindLexer lexer = new FindLexer(input);
+            // Create a stream of tokens fed by the lexer
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            // Create a parser that feeds off the token stream
+            FindParser parser = new FindParser(tokens);
+            
+            var c= parser.CommandLine();
+            //Console.WriteLine("c:"+(c==null?"null":c.Text));
+            var cstream = new CommonTreeNodeStream(c);
+            var eval = new FindEval(cstream);
+            var cli= eval.CommandLine();
+            //Console.WriteLine(cli.onsearch.ToString());
+            //Func<string, Type, bool> onsearch = (string s, Type t) => true;
+            /*string searchexpr = null;
             foreach (var option in opt)
             {
                 switch (option.Key)
@@ -87,20 +108,6 @@ namespace find
                     case "iname":
                         {
                             searchexpr = (string)option.Value;
-                            break;
-                        }
-                    case "regex":
-                        {
-                            var _onsearch = onsearch;
-                            var regex = new Regex((string)option.Value, RegexOptions.Compiled);
-                            onsearch = (string s, Type t) => _onsearch(s, t) && regex.IsMatch(s);
-                            break;
-                        }
-                    case "iregex":
-                        {
-                            var _onsearch = onsearch;
-                            var regex = new Regex((string)option.Value, RegexOptions.Compiled|RegexOptions.IgnoreCase);
-                            onsearch = (string s, Type t) => _onsearch(s, t) && regex.IsMatch(s);
                             break;
                         }
                     case "type":
@@ -139,66 +146,19 @@ namespace find
                         throw new NotImplementedException(option.Key);
                         break;
                 }
-            }
-            var files = Search(path, onsearch, maxdepth, searchexpr);
+            }*/
+            var files = Search(path, cli.onsearch, cli.maxdepth, cli.searchexpr);
             foreach (var file in files)
             {
                 Console.WriteLine(file);
             }
         }
-        enum Type
+        public enum Type
         {
             Unknown = 0,
             File = 1,
             Directory = 2
 
-        }
-        private static Action O(Action a) { return a; }
-        static Dictionary<string, object> opt = new Dictionary<string, object>();
-        static Dictionary<string, object> ENV = new Dictionary<string, object>();
-        private static Action<string> Opt(string p)
-        {
-            return (v) => { if (!string.IsNullOrEmpty(v)) opt[p] = true; };
-        }
-        private static Action<string> Env(string p)
-        {
-            return (v) => { if (!string.IsNullOrEmpty(v)) ENV[p] = true; };
-        }
-        private static Action<string> OptV(string p)
-        {
-            return (v) => { if (!string.IsNullOrEmpty(v)) opt[p] = v; };
-        }
-        private static Action<string> OptV<T>(string p)
-        {
-            return (v) => { if (!string.IsNullOrEmpty(v)) opt[p] = TypeDescriptor.GetConverter(typeof(T)).ConvertFromString(v); };
-        }
-        private static Action<string> OptSub(string p, Func<string, object> sub)
-        {
-            return (v) => { if (!string.IsNullOrEmpty(v)) opt[p] = sub(v); };
-        }
-        
-        private OptionSet Options()
-        {
-            OptionSet getopt_specs = new OptionSet() {
-{"d|depth=", OptV<int>("depth") },
-{"name=", OptV("name") },//
-{"type=", OptSub("type",(v)=>{
-    switch (v)
-	{
-    case "f":
-        return Type.File;
-    case "d":
-        return Type.Directory;
-	default:
-        return Type.Unknown;
-	} }) },
-{"size=",OptSub("size",(v)=>GetSize(v))},
-{"h|help", OptV("help") },
-{"maxdepth=", OptV("maxdepth")},
-{"mindepth=", OptV("mindepth")},
-{"version", OptV("version")},
-            };
-            return getopt_specs;
         }
 
         private object GetSize(string v)

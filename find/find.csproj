@@ -11,7 +11,8 @@
     <RootNamespace>find</RootNamespace>
     <AssemblyName>find</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -20,7 +21,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;LINQ NDESK_OPTIONS</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;LINQ NDESK_OPTIONS ANTLR_DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -33,7 +34,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <AntlrBuildTaskPath>$(MSBuildProjectDirectory)\..\packages_manual\antlr-dotnet-tool-3.4.1.9004</AntlrBuildTaskPath>
+    <AntlrToolPath>$(MSBuildProjectDirectory)\..\packages_manual\antlr-dotnet-tool-3.4.1.9004\antlr3.exe</AntlrToolPath>
+  </PropertyGroup>
+  <Import Project="..\packages_manual\antlr-dotnet-tool-3.4.1.9004\Antlr3.targets" />
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages_manual\antlr-dotnet-tool-3.4.1.9004\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.StringTemplate">
+      <HintPath>..\packages_manual\antlr-dotnet-st3-3.4.1.9004\Antlr3.StringTemplate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,11 +55,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\ndesc-options\src\NDesk.Options\NDesk.Options\Options.cs">
-      <Link>Options.cs</Link>
+    <Compile Include="find.cs">
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="find.cs" />
+    <Compile Include="FindEval.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FindEvalPartial.cs" />
+    <Compile Include="FindLexer.cs" />
+    <Compile Include="FindLexerPartial.cs" />
+    <Compile Include="FindParser.cs" />
+    <Compile Include="FindParserPartial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchExprLexer.cs" />
+    <Compile Include="SearchExprParser.cs" />
+    <Compile Include="SearchExprParserPartial.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
