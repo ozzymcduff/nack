@@ -175,6 +175,7 @@ namespace find
                     type = find.Type.Directory;
                     break;
                 default:
+                    Console.Error.WriteLine("Unknown type: "+tp);
                     throw new NotImplementedException(tp);
             }
             Matcher onsearch = (string s, find.Type t) => t==type;

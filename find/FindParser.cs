@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 ./find/Find.g 2012-12-27 11:41:34
+// $ANTLR 3.4 ./find/Find.g 2012-12-27 13:45:13
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -35,11 +35,9 @@ namespace  find
 public partial class FindParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "DEPTH", "EQ", "ESC", "HEX_DIGIT", "INAME", "IREGEX", "LPAREN", "NAME", "NOT", "OR", "PATH", "REGEX", "RPAREN", "SIZE", "STRING_LITERAL", "TYPE", "UNQOTED_LITERAL", "WS", "'d'", "'f'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "DEPTH", "EQ", "ESC", "HEX_DIGIT", "INAME", "IREGEX", "LPAREN", "NAME", "NOT", "OR", "PATH", "REGEX", "RPAREN", "SIZE", "STRING_LITERAL", "TYPE", "UNQOTED_LITERAL", "WS"
 	};
 	public const int EOF=-1;
-	public const int T__23=23;
-	public const int T__24=24;
 	public const int AND=4;
 	public const int DEPTH=5;
 	public const int EQ=6;
@@ -1215,7 +1213,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 	partial void LeaveRule_argument();
 
 	// $ANTLR start "argument"
-	// ./find/Find.g:33:1: argument : ( NAME ^ ( WS )? EQ ( WS )? value | INAME ^ ( WS )? EQ ( WS )? value | REGEX ^ ( WS )? EQ ( WS )? value | IREGEX ^ ( WS )? EQ ( WS )? value | TYPE ^ ( WS )? EQ ( WS )? ( 'f' | 'd' ) | SIZE ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL | DEPTH ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL | PATH ^ ( WS )? EQ ( WS )? value );
+	// ./find/Find.g:33:1: argument : ( NAME ^ ( WS )? EQ ( WS )? value | INAME ^ ( WS )? EQ ( WS )? value | REGEX ^ ( WS )? EQ ( WS )? value | IREGEX ^ ( WS )? EQ ( WS )? value | TYPE ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL | SIZE ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL | DEPTH ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL | PATH ^ ( WS )? EQ ( WS )? value );
 	[GrammarRule("argument")]
 	private AstParserRuleReturnScope<CommonTree, IToken> argument()
 	{
@@ -1247,7 +1245,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 		IToken WS48 = default(IToken);
 		IToken EQ49 = default(IToken);
 		IToken WS50 = default(IToken);
-		IToken set51 = default(IToken);
+		IToken UNQOTED_LITERAL51 = default(IToken);
 		IToken SIZE52 = default(IToken);
 		IToken WS53 = default(IToken);
 		IToken EQ54 = default(IToken);
@@ -1288,7 +1286,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 		CommonTree WS48_tree = default(CommonTree);
 		CommonTree EQ49_tree = default(CommonTree);
 		CommonTree WS50_tree = default(CommonTree);
-		CommonTree set51_tree = default(CommonTree);
+		CommonTree UNQOTED_LITERAL51_tree = default(CommonTree);
 		CommonTree SIZE52_tree = default(CommonTree);
 		CommonTree WS53_tree = default(CommonTree);
 		CommonTree EQ54_tree = default(CommonTree);
@@ -1307,7 +1305,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 		DebugLocation(33, 1);
 		try
 		{
-			// ./find/Find.g:34:2: ( NAME ^ ( WS )? EQ ( WS )? value | INAME ^ ( WS )? EQ ( WS )? value | REGEX ^ ( WS )? EQ ( WS )? value | IREGEX ^ ( WS )? EQ ( WS )? value | TYPE ^ ( WS )? EQ ( WS )? ( 'f' | 'd' ) | SIZE ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL | DEPTH ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL | PATH ^ ( WS )? EQ ( WS )? value )
+			// ./find/Find.g:34:2: ( NAME ^ ( WS )? EQ ( WS )? value | INAME ^ ( WS )? EQ ( WS )? value | REGEX ^ ( WS )? EQ ( WS )? value | IREGEX ^ ( WS )? EQ ( WS )? value | TYPE ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL | SIZE ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL | DEPTH ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL | PATH ^ ( WS )? EQ ( WS )? value )
 			int alt32=8;
 			try { DebugEnterDecision(32, false);
 			switch (input.LA(1))
@@ -1722,7 +1720,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// ./find/Find.g:38:4: TYPE ^ ( WS )? EQ ( WS )? ( 'f' | 'd' )
+				// ./find/Find.g:38:4: TYPE ^ ( WS )? EQ ( WS )? UNQOTED_LITERAL
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
@@ -1801,22 +1799,11 @@ public partial class FindParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(25); }
 
 				DebugLocation(38, 21);
-
-				set51=(IToken)input.LT(1);
-				if ((input.LA(1)>=23 && input.LA(1)<=24))
-				{
-					input.Consume();
-					if (state.backtracking == 0) adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set51));
-					state.errorRecovery=false;state.failed=false;
+				UNQOTED_LITERAL51=(IToken)Match(input,UNQOTED_LITERAL,Follow._UNQOTED_LITERAL_in_argument273); if (state.failed) return retval;
+				if (state.backtracking == 0) {
+				UNQOTED_LITERAL51_tree = (CommonTree)adaptor.Create(UNQOTED_LITERAL51);
+				adaptor.AddChild(root_0, UNQOTED_LITERAL51_tree);
 				}
-				else
-				{
-					if (state.backtracking>0) {state.failed=true; return retval;}
-					MismatchedSetException mse = new MismatchedSetException(null,input);
-					DebugRecognitionException(mse);
-					throw mse;
-				}
-
 
 				}
 				break;
@@ -1827,7 +1814,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(39, 8);
-				SIZE52=(IToken)Match(input,SIZE,Follow._SIZE_in_argument283); if (state.failed) return retval;
+				SIZE52=(IToken)Match(input,SIZE,Follow._SIZE_in_argument279); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				SIZE52_tree = (CommonTree)adaptor.Create(SIZE52);
 				root_0 = (CommonTree)adaptor.BecomeRoot(SIZE52_tree, root_0);
@@ -1851,7 +1838,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 					// ./find/Find.g:39:10: WS
 					{
 					DebugLocation(39, 10);
-					WS53=(IToken)Match(input,WS,Follow._WS_in_argument286); if (state.failed) return retval;
+					WS53=(IToken)Match(input,WS,Follow._WS_in_argument282); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					WS53_tree = (CommonTree)adaptor.Create(WS53);
 					adaptor.AddChild(root_0, WS53_tree);
@@ -1864,7 +1851,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(26); }
 
 				DebugLocation(39, 14);
-				EQ54=(IToken)Match(input,EQ,Follow._EQ_in_argument289); if (state.failed) return retval;
+				EQ54=(IToken)Match(input,EQ,Follow._EQ_in_argument285); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				EQ54_tree = (CommonTree)adaptor.Create(EQ54);
 				adaptor.AddChild(root_0, EQ54_tree);
@@ -1888,7 +1875,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 					// ./find/Find.g:39:17: WS
 					{
 					DebugLocation(39, 17);
-					WS55=(IToken)Match(input,WS,Follow._WS_in_argument291); if (state.failed) return retval;
+					WS55=(IToken)Match(input,WS,Follow._WS_in_argument287); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					WS55_tree = (CommonTree)adaptor.Create(WS55);
 					adaptor.AddChild(root_0, WS55_tree);
@@ -1901,7 +1888,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(27); }
 
 				DebugLocation(39, 21);
-				UNQOTED_LITERAL56=(IToken)Match(input,UNQOTED_LITERAL,Follow._UNQOTED_LITERAL_in_argument294); if (state.failed) return retval;
+				UNQOTED_LITERAL56=(IToken)Match(input,UNQOTED_LITERAL,Follow._UNQOTED_LITERAL_in_argument290); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				UNQOTED_LITERAL56_tree = (CommonTree)adaptor.Create(UNQOTED_LITERAL56);
 				adaptor.AddChild(root_0, UNQOTED_LITERAL56_tree);
@@ -1916,7 +1903,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(40, 9);
-				DEPTH57=(IToken)Match(input,DEPTH,Follow._DEPTH_in_argument300); if (state.failed) return retval;
+				DEPTH57=(IToken)Match(input,DEPTH,Follow._DEPTH_in_argument296); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				DEPTH57_tree = (CommonTree)adaptor.Create(DEPTH57);
 				root_0 = (CommonTree)adaptor.BecomeRoot(DEPTH57_tree, root_0);
@@ -1940,7 +1927,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 					// ./find/Find.g:40:11: WS
 					{
 					DebugLocation(40, 11);
-					WS58=(IToken)Match(input,WS,Follow._WS_in_argument303); if (state.failed) return retval;
+					WS58=(IToken)Match(input,WS,Follow._WS_in_argument299); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					WS58_tree = (CommonTree)adaptor.Create(WS58);
 					adaptor.AddChild(root_0, WS58_tree);
@@ -1953,7 +1940,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(28); }
 
 				DebugLocation(40, 15);
-				EQ59=(IToken)Match(input,EQ,Follow._EQ_in_argument306); if (state.failed) return retval;
+				EQ59=(IToken)Match(input,EQ,Follow._EQ_in_argument302); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				EQ59_tree = (CommonTree)adaptor.Create(EQ59);
 				adaptor.AddChild(root_0, EQ59_tree);
@@ -1977,7 +1964,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 					// ./find/Find.g:40:18: WS
 					{
 					DebugLocation(40, 18);
-					WS60=(IToken)Match(input,WS,Follow._WS_in_argument308); if (state.failed) return retval;
+					WS60=(IToken)Match(input,WS,Follow._WS_in_argument304); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					WS60_tree = (CommonTree)adaptor.Create(WS60);
 					adaptor.AddChild(root_0, WS60_tree);
@@ -1990,7 +1977,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(29); }
 
 				DebugLocation(40, 22);
-				UNQOTED_LITERAL61=(IToken)Match(input,UNQOTED_LITERAL,Follow._UNQOTED_LITERAL_in_argument311); if (state.failed) return retval;
+				UNQOTED_LITERAL61=(IToken)Match(input,UNQOTED_LITERAL,Follow._UNQOTED_LITERAL_in_argument307); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				UNQOTED_LITERAL61_tree = (CommonTree)adaptor.Create(UNQOTED_LITERAL61);
 				adaptor.AddChild(root_0, UNQOTED_LITERAL61_tree);
@@ -2005,7 +1992,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(41, 8);
-				PATH62=(IToken)Match(input,PATH,Follow._PATH_in_argument317); if (state.failed) return retval;
+				PATH62=(IToken)Match(input,PATH,Follow._PATH_in_argument313); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				PATH62_tree = (CommonTree)adaptor.Create(PATH62);
 				root_0 = (CommonTree)adaptor.BecomeRoot(PATH62_tree, root_0);
@@ -2029,7 +2016,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 					// ./find/Find.g:41:10: WS
 					{
 					DebugLocation(41, 10);
-					WS63=(IToken)Match(input,WS,Follow._WS_in_argument320); if (state.failed) return retval;
+					WS63=(IToken)Match(input,WS,Follow._WS_in_argument316); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					WS63_tree = (CommonTree)adaptor.Create(WS63);
 					adaptor.AddChild(root_0, WS63_tree);
@@ -2042,7 +2029,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(30); }
 
 				DebugLocation(41, 14);
-				EQ64=(IToken)Match(input,EQ,Follow._EQ_in_argument323); if (state.failed) return retval;
+				EQ64=(IToken)Match(input,EQ,Follow._EQ_in_argument319); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				EQ64_tree = (CommonTree)adaptor.Create(EQ64);
 				adaptor.AddChild(root_0, EQ64_tree);
@@ -2066,7 +2053,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 					// ./find/Find.g:41:17: WS
 					{
 					DebugLocation(41, 17);
-					WS65=(IToken)Match(input,WS,Follow._WS_in_argument325); if (state.failed) return retval;
+					WS65=(IToken)Match(input,WS,Follow._WS_in_argument321); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					WS65_tree = (CommonTree)adaptor.Create(WS65);
 					adaptor.AddChild(root_0, WS65_tree);
@@ -2079,7 +2066,7 @@ public partial class FindParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(31); }
 
 				DebugLocation(41, 21);
-				PushFollow(Follow._value_in_argument328);
+				PushFollow(Follow._value_in_argument324);
 				value66=value();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2299,24 +2286,24 @@ public partial class FindParser : Antlr.Runtime.Parser
 		public static readonly BitSet _value_in_argument255 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _TYPE_in_argument262 = new BitSet(new ulong[]{0x400040UL});
 		public static readonly BitSet _WS_in_argument265 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _EQ_in_argument268 = new BitSet(new ulong[]{0x1C00000UL});
-		public static readonly BitSet _WS_in_argument270 = new BitSet(new ulong[]{0x1800000UL});
-		public static readonly BitSet _set_in_argument273 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SIZE_in_argument283 = new BitSet(new ulong[]{0x400040UL});
-		public static readonly BitSet _WS_in_argument286 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _EQ_in_argument289 = new BitSet(new ulong[]{0x600000UL});
-		public static readonly BitSet _WS_in_argument291 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _UNQOTED_LITERAL_in_argument294 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DEPTH_in_argument300 = new BitSet(new ulong[]{0x400040UL});
-		public static readonly BitSet _WS_in_argument303 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _EQ_in_argument306 = new BitSet(new ulong[]{0x600000UL});
-		public static readonly BitSet _WS_in_argument308 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _UNQOTED_LITERAL_in_argument311 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _PATH_in_argument317 = new BitSet(new ulong[]{0x400040UL});
-		public static readonly BitSet _WS_in_argument320 = new BitSet(new ulong[]{0x40UL});
-		public static readonly BitSet _EQ_in_argument323 = new BitSet(new ulong[]{0x680000UL});
-		public static readonly BitSet _WS_in_argument325 = new BitSet(new ulong[]{0x280000UL});
-		public static readonly BitSet _value_in_argument328 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _EQ_in_argument268 = new BitSet(new ulong[]{0x600000UL});
+		public static readonly BitSet _WS_in_argument270 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _UNQOTED_LITERAL_in_argument273 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SIZE_in_argument279 = new BitSet(new ulong[]{0x400040UL});
+		public static readonly BitSet _WS_in_argument282 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _EQ_in_argument285 = new BitSet(new ulong[]{0x600000UL});
+		public static readonly BitSet _WS_in_argument287 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _UNQOTED_LITERAL_in_argument290 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DEPTH_in_argument296 = new BitSet(new ulong[]{0x400040UL});
+		public static readonly BitSet _WS_in_argument299 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _EQ_in_argument302 = new BitSet(new ulong[]{0x600000UL});
+		public static readonly BitSet _WS_in_argument304 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _UNQOTED_LITERAL_in_argument307 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _PATH_in_argument313 = new BitSet(new ulong[]{0x400040UL});
+		public static readonly BitSet _WS_in_argument316 = new BitSet(new ulong[]{0x40UL});
+		public static readonly BitSet _EQ_in_argument319 = new BitSet(new ulong[]{0x680000UL});
+		public static readonly BitSet _WS_in_argument321 = new BitSet(new ulong[]{0x280000UL});
+		public static readonly BitSet _value_in_argument324 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _WS_in_synpred3_Find96 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets

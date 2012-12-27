@@ -27,7 +27,7 @@ expr returns [Matcher value]
 	|   ^(REGEX EQ v=val)  { $value = RegNameMatch(v,false);}
 	|   ^(IREGEX EQ v=val) { $value = RegNameMatch(v,true);}
 	|   ^(SIZE EQ v=val) { $value = Size(v); }
-	|   ^(TYPE EQ t=type) { $value = Type(t);}
+	|   ^(TYPE EQ v=val) { $value = Type(v);}
 	|   ^(PATH EQ v=val) { $value = Path(v);}
 	;
 
@@ -36,9 +36,6 @@ other
 
 integer returns [long value]
 	: i=UNQOTED_LITERAL {$value=Int64.Parse(i.Text);};
-
-type returns [string value]
-	: t=('f'|'t') {$value=t.Text;};
 
 val returns [string value]
 	: q=STRING_LITERAL { $value= q.Text.Substring(1,q.Text.Length-2);}

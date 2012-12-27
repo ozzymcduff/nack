@@ -35,7 +35,7 @@ argument
 	| INAME^ WS? EQ WS? value 
 	| REGEX^ WS? EQ WS? value 
 	| IREGEX^ WS? EQ WS? value  
-	| TYPE^ WS? EQ WS? ('f'|'d') 
+	| TYPE^ WS? EQ WS? UNQOTED_LITERAL 
 	| SIZE^ WS? EQ WS? UNQOTED_LITERAL 
 	| DEPTH^ WS? EQ WS? UNQOTED_LITERAL 
 	| PATH^ WS? EQ WS? value
@@ -69,7 +69,7 @@ STRING_LITERAL
 // them go back to STRING_LITERAL to be matched.  ANTLR does the
 // right thing by matching immediately; hence, it's ok to shut off
 // the FOLLOW ambig warnings.
-protected
+fragment
 ESC
 	:	'\\'
 		(	'n'
@@ -83,22 +83,13 @@ ESC
 		|	('u')+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
 		|	'0'..'3'
 			(
-				//options {
-				//	warnWhenFollowAmbig = false;
-				//}
 			:	'0'..'7'
 				(
-				//	options {
-				//		warnWhenFollowAmbig = false;
-				//	}
 				:	'0'..'7'
 				)?
 			)?
 		|	'4'..'7'
 			(
-				//options {
-				//	warnWhenFollowAmbig = false;
-				//}
 			:	'0'..'7'
 			)?
 		)
@@ -106,7 +97,7 @@ ESC
 
 
 // hexadecimal digit (again, note it's protected!)
-protected
+fragment
 HEX_DIGIT
 	:	('0'..'9'|'A'..'F'|'a'..'f')
 	;

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 ./find/FindEval.g 2012-12-27 11:41:38
+// $ANTLR 3.4 ./find/FindEval.g 2012-12-27 13:45:17
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -37,11 +37,9 @@ namespace  find
 public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "DEPTH", "EQ", "ESC", "HEX_DIGIT", "INAME", "IREGEX", "LPAREN", "NAME", "NOT", "OR", "PATH", "REGEX", "RPAREN", "SIZE", "STRING_LITERAL", "TYPE", "UNQOTED_LITERAL", "WS", "'d'", "'f'", "'t'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "AND", "DEPTH", "EQ", "ESC", "HEX_DIGIT", "INAME", "IREGEX", "LPAREN", "NAME", "NOT", "OR", "PATH", "REGEX", "RPAREN", "SIZE", "STRING_LITERAL", "TYPE", "UNQOTED_LITERAL", "WS"
 	};
 	public const int EOF=-1;
-	public const int T__23=23;
-	public const int T__24=24;
 	public const int AND=4;
 	public const int DEPTH=5;
 	public const int EQ=6;
@@ -61,7 +59,6 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 	public const int TYPE=20;
 	public const int UNQOTED_LITERAL=21;
 	public const int WS=22;
-	public const int T__25=25;
 
 	public FindEval(ITreeNodeStream input)
 		: this(input, new RecognizerSharedState())
@@ -254,7 +251,7 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 	partial void LeaveRule_expr();
 
 	// $ANTLR start "expr"
-	// ./find/FindEval.g:20:1: expr returns [Matcher value] : ( ^( NOT a= expr ) | ^( OR a= expr b= expr ) | ^( AND a= expr b= expr ) | ^( LPAREN a= expr RPAREN ) | ^( NAME EQ v= val ) | ^( INAME EQ v= val ) | ^( REGEX EQ v= val ) | ^( IREGEX EQ v= val ) | ^( SIZE EQ v= val ) | ^( TYPE EQ t= type ) | ^( PATH EQ v= val ) );
+	// ./find/FindEval.g:20:1: expr returns [Matcher value] : ( ^( NOT a= expr ) | ^( OR a= expr b= expr ) | ^( AND a= expr b= expr ) | ^( LPAREN a= expr RPAREN ) | ^( NAME EQ v= val ) | ^( INAME EQ v= val ) | ^( REGEX EQ v= val ) | ^( IREGEX EQ v= val ) | ^( SIZE EQ v= val ) | ^( TYPE EQ v= val ) | ^( PATH EQ v= val ) );
 	[GrammarRule("expr")]
 	private Matcher expr()
 	{
@@ -267,13 +264,12 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 		Matcher a = default(Matcher);
 		Matcher b = default(Matcher);
 		string v = default(string);
-		string t = default(string);
 
 		try { DebugEnterRule(GrammarFileName, "expr");
 		DebugLocation(20, 1);
 		try
 		{
-			// ./find/FindEval.g:21:5: ( ^( NOT a= expr ) | ^( OR a= expr b= expr ) | ^( AND a= expr b= expr ) | ^( LPAREN a= expr RPAREN ) | ^( NAME EQ v= val ) | ^( INAME EQ v= val ) | ^( REGEX EQ v= val ) | ^( IREGEX EQ v= val ) | ^( SIZE EQ v= val ) | ^( TYPE EQ t= type ) | ^( PATH EQ v= val ) )
+			// ./find/FindEval.g:21:5: ( ^( NOT a= expr ) | ^( OR a= expr b= expr ) | ^( AND a= expr b= expr ) | ^( LPAREN a= expr RPAREN ) | ^( NAME EQ v= val ) | ^( INAME EQ v= val ) | ^( REGEX EQ v= val ) | ^( IREGEX EQ v= val ) | ^( SIZE EQ v= val ) | ^( TYPE EQ v= val ) | ^( PATH EQ v= val ) )
 			int alt3=11;
 			try { DebugEnterDecision(3, false);
 			switch (input.LA(1))
@@ -566,7 +562,7 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 10:
 				DebugEnterAlt(10);
-				// ./find/FindEval.g:30:6: ^( TYPE EQ t= type )
+				// ./find/FindEval.g:30:6: ^( TYPE EQ v= val )
 				{
 				DebugLocation(30, 6);
 				DebugLocation(30, 8);
@@ -576,15 +572,15 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 				DebugLocation(30, 13);
 				Match(input,EQ,Follow._EQ_in_expr261); 
 				DebugLocation(30, 17);
-				PushFollow(Follow._type_in_expr265);
-				t=type();
+				PushFollow(Follow._val_in_expr265);
+				v=val();
 				PopFollow();
 
 
 				Match(input, TokenTypes.Up, null); 
 
-				DebugLocation(30, 24);
-				 value = Type(t);
+				DebugLocation(30, 23);
+				 value = Type(v);
 
 				}
 				break;
@@ -743,80 +739,17 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 	}
 	// $ANTLR end "integer"
 
-	partial void EnterRule_type();
-	partial void LeaveRule_type();
-
-	// $ANTLR start "type"
-	// ./find/FindEval.g:40:1: type returns [string value] : t= ( 'f' | 't' ) ;
-	[GrammarRule("type")]
-	private string type()
-	{
-		EnterRule_type();
-		EnterRule("type", 6);
-		TraceIn("type", 6);
-		string value = default(string);
-
-
-		CommonTree t = default(CommonTree);
-
-		try { DebugEnterRule(GrammarFileName, "type");
-		DebugLocation(40, 31);
-		try
-		{
-			// ./find/FindEval.g:41:2: (t= ( 'f' | 't' ) )
-			DebugEnterAlt(1);
-			// ./find/FindEval.g:41:4: t= ( 'f' | 't' )
-			{
-			DebugLocation(41, 5);
-
-			t=(CommonTree)input.LT(1);
-			if ((input.LA(1)>=24 && input.LA(1)<=25))
-			{
-				input.Consume();
-				state.errorRecovery=false;
-			}
-			else
-			{
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				DebugRecognitionException(mse);
-				throw mse;
-			}
-
-			DebugLocation(41, 16);
-			value =t.Text;
-
-			}
-
-		}
-		catch (RecognitionException re)
-		{
-			ReportError(re);
-			Recover(input,re);
-		}
-		finally
-		{
-			TraceOut("type", 6);
-			LeaveRule("type", 6);
-			LeaveRule_type();
-		}
-		DebugLocation(41, 31);
-		} finally { DebugExitRule(GrammarFileName, "type"); }
-		return value;
-
-	}
-	// $ANTLR end "type"
-
 	partial void EnterRule_val();
 	partial void LeaveRule_val();
 
 	// $ANTLR start "val"
-	// ./find/FindEval.g:43:1: val returns [string value] : (q= STRING_LITERAL |v= UNQOTED_LITERAL );
+	// ./find/FindEval.g:40:1: val returns [string value] : (q= STRING_LITERAL |v= UNQOTED_LITERAL );
 	[GrammarRule("val")]
 	private string val()
 	{
 		EnterRule_val();
-		EnterRule("val", 7);
-		TraceIn("val", 7);
+		EnterRule("val", 6);
+		TraceIn("val", 6);
 		string value = default(string);
 
 
@@ -824,10 +757,10 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 		CommonTree v = default(CommonTree);
 
 		try { DebugEnterRule(GrammarFileName, "val");
-		DebugLocation(43, 37);
+		DebugLocation(40, 37);
 		try
 		{
-			// ./find/FindEval.g:44:2: (q= STRING_LITERAL |v= UNQOTED_LITERAL )
+			// ./find/FindEval.g:41:2: (q= STRING_LITERAL |v= UNQOTED_LITERAL )
 			int alt4=2;
 			try { DebugEnterDecision(4, false);
 			int LA4_0 = input.LA(1);
@@ -851,22 +784,22 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// ./find/FindEval.g:44:4: q= STRING_LITERAL
+				// ./find/FindEval.g:41:4: q= STRING_LITERAL
 				{
-				DebugLocation(44, 5);
-				q=(CommonTree)Match(input,STRING_LITERAL,Follow._STRING_LITERAL_in_val359); 
-				DebugLocation(44, 21);
+				DebugLocation(41, 5);
+				q=(CommonTree)Match(input,STRING_LITERAL,Follow._STRING_LITERAL_in_val338); 
+				DebugLocation(41, 21);
 				 value = q.Text.Substring(1,q.Text.Length-2);
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// ./find/FindEval.g:45:4: v= UNQOTED_LITERAL
+				// ./find/FindEval.g:42:4: v= UNQOTED_LITERAL
 				{
-				DebugLocation(45, 5);
-				v=(CommonTree)Match(input,UNQOTED_LITERAL,Follow._UNQOTED_LITERAL_in_val368); 
-				DebugLocation(45, 22);
+				DebugLocation(42, 5);
+				v=(CommonTree)Match(input,UNQOTED_LITERAL,Follow._UNQOTED_LITERAL_in_val347); 
+				DebugLocation(42, 22);
 				value =v.Text;
 
 				}
@@ -881,11 +814,11 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 		}
 		finally
 		{
-			TraceOut("val", 7);
-			LeaveRule("val", 7);
+			TraceOut("val", 6);
+			LeaveRule("val", 6);
 			LeaveRule_val();
 		}
-		DebugLocation(45, 37);
+		DebugLocation(42, 37);
 		} finally { DebugExitRule(GrammarFileName, "val"); }
 		return value;
 
@@ -927,8 +860,8 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 		public static readonly BitSet _EQ_in_expr244 = new BitSet(new ulong[]{0x280000UL});
 		public static readonly BitSet _val_in_expr248 = new BitSet(new ulong[]{0x8UL});
 		public static readonly BitSet _TYPE_in_expr259 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _EQ_in_expr261 = new BitSet(new ulong[]{0x3000000UL});
-		public static readonly BitSet _type_in_expr265 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _EQ_in_expr261 = new BitSet(new ulong[]{0x280000UL});
+		public static readonly BitSet _val_in_expr265 = new BitSet(new ulong[]{0x8UL});
 		public static readonly BitSet _PATH_in_expr276 = new BitSet(new ulong[]{0x4UL});
 		public static readonly BitSet _EQ_in_expr278 = new BitSet(new ulong[]{0x280000UL});
 		public static readonly BitSet _val_in_expr282 = new BitSet(new ulong[]{0x8UL});
@@ -936,9 +869,8 @@ public partial class FindEval : Antlr.Runtime.Tree.TreeParser
 		public static readonly BitSet _EQ_in_other299 = new BitSet(new ulong[]{0x200000UL});
 		public static readonly BitSet _integer_in_other303 = new BitSet(new ulong[]{0x8UL});
 		public static readonly BitSet _UNQOTED_LITERAL_in_integer321 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _set_in_type338 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _STRING_LITERAL_in_val359 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _UNQOTED_LITERAL_in_val368 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _STRING_LITERAL_in_val338 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _UNQOTED_LITERAL_in_val347 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }

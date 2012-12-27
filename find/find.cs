@@ -69,7 +69,7 @@ namespace find
                 }
             }
         }
-        public static bool debug = true;
+        public static bool debug = false;
         static void Main(string[] args)
         {
             var p = new find();
