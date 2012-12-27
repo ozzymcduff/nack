@@ -14,7 +14,7 @@ namespace find
 {
     public class find
     {
-        static IEnumerable<string> Search(string root, Matcher onsearch, long? maxdepth = null, string searchexpr=null)
+        static IEnumerable<string> Search(string root, Matcher onsearch, long? maxdepth = null, string searchexpr = null)
         {
             var dirs = new Queue<Tuple<string, int>>();
             dirs.Enqueue(new Tuple<string, int>(root, 0));
@@ -38,7 +38,7 @@ namespace find
 
                 if (paths != null && paths.Length > 0)
                 {
-                    foreach (string file in paths.Where(f => onsearch(f,Type.File)))
+                    foreach (string file in paths.Where(f => onsearch(f, Type.File)))
                     {
                         yield return file;
                     }
@@ -69,51 +69,32 @@ namespace find
                 }
             }
         }
-        public static bool debug = false;
+        public static bool debug = true;
         static void Main(string[] args)
         {
             var p = new find();
-            
+            if (args.Any(a => a.Equals("-version",
+                StringComparison.InvariantCultureIgnoreCase)))
+            {
+                var assembly = typeof(find).Assembly;
+                var name = assembly.GetName();
+                Console.WriteLine(name.Name);
+                var descriptionAttribute = assembly
+                    .GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false)
+                    .OfType<AssemblyDescriptionAttribute>()
+                    .FirstOrDefault();
+
+                if (descriptionAttribute != null)
+                    Console.WriteLine(descriptionAttribute.Description);
+                Console.WriteLine(name.Version);
+                return;
+            }
             var path = args.FirstOrDefault();
             var s = new MemoryStream();
             var tobeparsed = String.Join(" ", args.Skip(1));
             if (debug) Console.WriteLine(tobeparsed);
-            
-            var cli= FindEval.Parse(tobeparsed);
-            //Console.WriteLine(cli.onsearch.ToString());
-            //Func<string, Type, bool> onsearch = (string s, Type t) => true;
-            /*string searchexpr = null;
-            foreach (var option in opt)
-            {
-                switch (option.Key)
-                {
-                    case "type":
-                        {
-                            var _onsearch = onsearch;
-                            var type = (Type)option.Value;
-                            onsearch = (string s, Type t) => _onsearch(s, t) && t==type;
-                            break;
-                        }
-                    case "version":
-                        {
-                            var assembly = typeof(find).Assembly;
-                            var name = assembly.GetName();
-                            Console.WriteLine(name.Name);
-                            var descriptionAttribute = assembly
-                                .GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false)
-                                .OfType<AssemblyDescriptionAttribute>()
-                                .FirstOrDefault();
 
-                            if (descriptionAttribute != null)
-                                Console.WriteLine(descriptionAttribute.Description);
-                            Console.WriteLine(name.Version);
-                            return;
-                        }
-                    default:
-                        throw new NotImplementedException(option.Key);
-                        break;
-                }
-            }*/
+            var cli = FindEval.Parse(tobeparsed);
             var files = Search(path, cli.onsearch, cli.maxdepth, cli.searchexpr);
             foreach (var file in files)
             {

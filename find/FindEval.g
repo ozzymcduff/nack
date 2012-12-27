@@ -26,17 +26,16 @@ expr returns [Matcher value]
 	|   ^(INAME EQ v=val)  { $value = NameMatch(v,true);}
 	|   ^(REGEX EQ v=val)  { $value = RegNameMatch(v,false);}
 	|   ^(IREGEX EQ v=val) { $value = RegNameMatch(v,true);}
-	|   ^(SIZE EQ i=integer p=sizepostfix) {$value = Size(i,p);}
+	|   ^(SIZE EQ v=val) { $value = Size(v); }
 	|   ^(TYPE EQ t=type) { $value = Type(t);}
+	|   ^(PATH EQ v=val) { $value = Path(v);}
 	;
+
 other
 	: ^(DEPTH EQ i=integer) { Depth(i);};
 
-sizepostfix returns [string value]
-	: s=SIZEPOSTFIX {$value=s.Text;};
-
 integer returns [long value]
-	: i=INTEGER {$value=Int64.Parse(i.Text);};
+	: i=UNQOTED_LITERAL {$value=Int64.Parse(i.Text);};
 
 type returns [string value]
 	: t=('f'|'t') {$value=t.Text;};

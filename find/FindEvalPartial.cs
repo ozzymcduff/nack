@@ -47,6 +47,10 @@ namespace find
             {
                 return onsearch(s, find.Type.File);
             }
+            public bool pathsearch(string p)
+            {
+                return onsearch(p, find.Type.Directory);
+            }
         }
         private string searchExpr = null;
         private IList<Matcher> matchers = new List<Matcher>();
@@ -85,11 +89,24 @@ namespace find
         {
             return (string s, find.Type t) => t.IsDirectory()&&match(s);
         }
+        Matcher M(Matcher m) 
+        {
+            return m;
+        }
         Matcher NameMatch(string value, bool caseInsensitive)
         {
-            //searchExpr = value;
             var m = SearchExprParser.Parse(value, caseInsensitive: caseInsensitive);
-            return File((string s) => m.IsMatch(FileName(s)));
+            return M((string s, find.Type t) => 
+                (t.IsFile() && m.IsMatch(FileName(s))
+                ||(t.IsDirectory() && m.IsMatch(DirectoryName(s)))));
+        }
+
+        private string DirectoryName(string s)
+        {
+            // we know that it is a directory, so even if it looks like a ending filename, we should treat it as a path
+            return (s.EndsWith("\\")|| s.EndsWith("/"))
+                ? System.IO.Path.GetDirectoryName(s)
+                : System.IO.Path.GetFileName(s);
         }
         Matcher RegNameMatch(string value, bool caseInsensitive)
         {
@@ -98,13 +115,34 @@ namespace find
             var options = RegexOptions.Compiled;
             if (caseInsensitive)
                 options |= RegexOptions.IgnoreCase;
-            var regex = new Regex(value, options);
-            return File((string s) => regex.IsMatch(FileName(s)));
+            var m = new Regex(value, options);
+            return M((string s, find.Type t) =>
+                (t.IsFile() && m.IsMatch(FileName(s))
+                    || (t.IsDirectory() && m.IsMatch(DirectoryName(s)))));
         }
 
         private string FileName(string s)
         {
             return System.IO.Path.GetFileName(s);
+        }
+        private string FilePath(string s)
+        {
+            var m = new[] { '\\', '/' };
+            var lastindex = -1;
+            for (int i = s.Length-1; i >= 0; i--)
+            {
+                if (m.Contains(s[i]))
+                { 
+                    lastindex = i;
+                    break;
+                }
+            }
+            if (lastindex > 0)
+            {
+                var p = s.Substring(0, lastindex);
+                return p;
+            } 
+            return s;
         }
         Matcher And(Matcher a, Matcher b)
         {
@@ -147,10 +185,11 @@ namespace find
             if (find.debug) Console.WriteLine("depth");
             maxdepth = d;
         }
-        private long Factor(string postfix) 
+        private long Factor(char? postfix) 
         {
             int factor = 512;
-            switch (postfix.SingleOrDefault())
+            if (!postfix.HasValue) return factor;
+            switch (postfix.Value)
             {
                 case 'c'://'c'    for bytes
                     factor = 1; break;
@@ -167,11 +206,47 @@ namespace find
             }
             return factor;
         }
-        Matcher Size(long size,string postfix)
+        Matcher Size(string size)
         {
             if (find.debug) Console.WriteLine("size");
-            var sizev = size*Factor(postfix);
-            return File((string s) => new FileInfo(s).Length > sizev);
+            char? prefix = null;
+            if (!Char.IsDigit( size.First()))
+            { 
+                prefix = size.First();
+                size = size.Substring(1);
+            }
+            char? postfix = null;
+            if (!Char.IsDigit(size.Last())) 
+            {
+                postfix = size.Last();
+                size = size.Substring(0, size.Length - 1);
+            }
+            var sizev = Int64.Parse(size);
+            var factor = Factor(postfix);
+            switch (prefix)
+            {
+                case '+':
+                    return File((string s) => Math.Floor(GetSize(s,factor)) > sizev);
+                case '-':
+                    return File((string s) => Math.Ceiling(GetSize(s, factor)) < sizev);
+                default:
+                    return File((string s) => Math.Floor(GetSize(s, factor)) == sizev);
+            }
+        }
+        protected virtual double GetSize(string file,long factor) 
+        {
+            var l = new FileInfo(file).Length;
+            //Console.WriteLine("size:"+l+"/"+factor);
+            return (double)l / factor;
+        }
+        Matcher Path(string n) 
+        {
+            if (find.debug) Console.WriteLine("path");
+            var m = SearchExprParser.Parse(n, caseInsensitive: false);
+            return M((string s, find.Type t) =>
+                (t.IsFile() && m.IsMatch(FilePath(s))
+                    || (t.IsDirectory() && m.IsMatch(s)))
+                    );
         }
     }
 }

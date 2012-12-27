@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 ./find/Find.g 2012-12-27 00:06:34
+// $ANTLR 3.4 ./find/Find.g 2012-12-27 11:41:34
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -31,28 +31,27 @@ namespace  find
 public partial class FindLexer : Antlr.Runtime.Lexer
 {
 	public const int EOF=-1;
+	public const int T__23=23;
 	public const int T__24=24;
-	public const int T__25=25;
 	public const int AND=4;
 	public const int DEPTH=5;
 	public const int EQ=6;
 	public const int ESC=7;
 	public const int HEX_DIGIT=8;
 	public const int INAME=9;
-	public const int INTEGER=10;
-	public const int IREGEX=11;
-	public const int LPAREN=12;
-	public const int NAME=13;
-	public const int NOT=14;
-	public const int OR=15;
+	public const int IREGEX=10;
+	public const int LPAREN=11;
+	public const int NAME=12;
+	public const int NOT=13;
+	public const int OR=14;
+	public const int PATH=15;
 	public const int REGEX=16;
 	public const int RPAREN=17;
 	public const int SIZE=18;
-	public const int SIZEPOSTFIX=19;
-	public const int STRING_LITERAL=20;
-	public const int TYPE=21;
-	public const int UNQOTED_LITERAL=22;
-	public const int WS=23;
+	public const int STRING_LITERAL=19;
+	public const int TYPE=20;
+	public const int UNQOTED_LITERAL=21;
+	public const int WS=22;
 
     // delegates
     // delegators
@@ -80,19 +79,19 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	partial void EnterRule(string ruleName, int ruleIndex);
 	partial void LeaveRule(string ruleName, int ruleIndex);
 
-	partial void EnterRule_T__24();
-	partial void LeaveRule_T__24();
+	partial void EnterRule_T__23();
+	partial void LeaveRule_T__23();
 
-	// $ANTLR start "T__24"
-	[GrammarRule("T__24")]
-	private void mT__24()
+	// $ANTLR start "T__23"
+	[GrammarRule("T__23")]
+	private void mT__23()
 	{
-		EnterRule_T__24();
-		EnterRule("T__24", 1);
-		TraceIn("T__24", 1);
+		EnterRule_T__23();
+		EnterRule("T__23", 1);
+		TraceIn("T__23", 1);
 		try
 		{
-			int _type = T__24;
+			int _type = T__23;
 			int _channel = DefaultTokenChannel;
 			// ./find/Find.g:9:7: ( 'd' )
 			DebugEnterAlt(1);
@@ -108,26 +107,26 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__24", 1);
-			LeaveRule("T__24", 1);
-			LeaveRule_T__24();
+			TraceOut("T__23", 1);
+			LeaveRule("T__23", 1);
+			LeaveRule_T__23();
 		}
 	}
-	// $ANTLR end "T__24"
+	// $ANTLR end "T__23"
 
-	partial void EnterRule_T__25();
-	partial void LeaveRule_T__25();
+	partial void EnterRule_T__24();
+	partial void LeaveRule_T__24();
 
-	// $ANTLR start "T__25"
-	[GrammarRule("T__25")]
-	private void mT__25()
+	// $ANTLR start "T__24"
+	[GrammarRule("T__24")]
+	private void mT__24()
 	{
-		EnterRule_T__25();
-		EnterRule("T__25", 2);
-		TraceIn("T__25", 2);
+		EnterRule_T__24();
+		EnterRule("T__24", 2);
+		TraceIn("T__24", 2);
 		try
 		{
-			int _type = T__25;
+			int _type = T__24;
 			int _channel = DefaultTokenChannel;
 			// ./find/Find.g:10:7: ( 'f' )
 			DebugEnterAlt(1);
@@ -143,12 +142,12 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__25", 2);
-			LeaveRule("T__25", 2);
-			LeaveRule_T__25();
+			TraceOut("T__24", 2);
+			LeaveRule("T__24", 2);
+			LeaveRule_T__24();
 		}
 	}
-	// $ANTLR end "T__25"
+	// $ANTLR end "T__24"
 
 	partial void EnterRule_NAME();
 	partial void LeaveRule_NAME();
@@ -164,11 +163,11 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		{
 			int _type = NAME;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:46:5: ( '-name' )
+			// ./find/Find.g:48:5: ( '-name' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:46:6: '-name'
+			// ./find/Find.g:48:6: '-name'
 			{
-			DebugLocation(46, 6);
+			DebugLocation(48, 6);
 			Match("-name"); 
 
 
@@ -200,11 +199,11 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		{
 			int _type = INAME;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:47:6: ( '-iname' )
+			// ./find/Find.g:49:6: ( '-iname' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:47:7: '-iname'
+			// ./find/Find.g:49:7: '-iname'
 			{
-			DebugLocation(47, 7);
+			DebugLocation(49, 7);
 			Match("-iname"); 
 
 
@@ -236,11 +235,11 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		{
 			int _type = REGEX;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:48:6: ( '-regex' )
+			// ./find/Find.g:50:6: ( '-regex' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:48:7: '-regex'
+			// ./find/Find.g:50:7: '-regex'
 			{
-			DebugLocation(48, 7);
+			DebugLocation(50, 7);
 			Match("-regex"); 
 
 
@@ -272,11 +271,11 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		{
 			int _type = IREGEX;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:49:7: ( '-iregex' )
+			// ./find/Find.g:51:7: ( '-iregex' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:49:8: '-iregex'
+			// ./find/Find.g:51:8: '-iregex'
 			{
-			DebugLocation(49, 8);
+			DebugLocation(51, 8);
 			Match("-iregex"); 
 
 
@@ -294,6 +293,42 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	}
 	// $ANTLR end "IREGEX"
 
+	partial void EnterRule_PATH();
+	partial void LeaveRule_PATH();
+
+	// $ANTLR start "PATH"
+	[GrammarRule("PATH")]
+	private void mPATH()
+	{
+		EnterRule_PATH();
+		EnterRule("PATH", 7);
+		TraceIn("PATH", 7);
+		try
+		{
+			int _type = PATH;
+			int _channel = DefaultTokenChannel;
+			// ./find/Find.g:52:5: ( '-path' )
+			DebugEnterAlt(1);
+			// ./find/Find.g:52:6: '-path'
+			{
+			DebugLocation(52, 6);
+			Match("-path"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("PATH", 7);
+			LeaveRule("PATH", 7);
+			LeaveRule_PATH();
+		}
+	}
+	// $ANTLR end "PATH"
+
 	partial void EnterRule_TYPE();
 	partial void LeaveRule_TYPE();
 
@@ -302,17 +337,17 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mTYPE()
 	{
 		EnterRule_TYPE();
-		EnterRule("TYPE", 7);
-		TraceIn("TYPE", 7);
+		EnterRule("TYPE", 8);
+		TraceIn("TYPE", 8);
 		try
 		{
 			int _type = TYPE;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:50:5: ( '-type' )
+			// ./find/Find.g:53:5: ( '-type' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:50:6: '-type'
+			// ./find/Find.g:53:6: '-type'
 			{
-			DebugLocation(50, 6);
+			DebugLocation(53, 6);
 			Match("-type"); 
 
 
@@ -323,8 +358,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("TYPE", 7);
-			LeaveRule("TYPE", 7);
+			TraceOut("TYPE", 8);
+			LeaveRule("TYPE", 8);
 			LeaveRule_TYPE();
 		}
 	}
@@ -338,17 +373,17 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mSIZE()
 	{
 		EnterRule_SIZE();
-		EnterRule("SIZE", 8);
-		TraceIn("SIZE", 8);
+		EnterRule("SIZE", 9);
+		TraceIn("SIZE", 9);
 		try
 		{
 			int _type = SIZE;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:51:5: ( '-size' )
+			// ./find/Find.g:54:5: ( '-size' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:51:6: '-size'
+			// ./find/Find.g:54:6: '-size'
 			{
-			DebugLocation(51, 6);
+			DebugLocation(54, 6);
 			Match("-size"); 
 
 
@@ -359,8 +394,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("SIZE", 8);
-			LeaveRule("SIZE", 8);
+			TraceOut("SIZE", 9);
+			LeaveRule("SIZE", 9);
 			LeaveRule_SIZE();
 		}
 	}
@@ -374,17 +409,17 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mDEPTH()
 	{
 		EnterRule_DEPTH();
-		EnterRule("DEPTH", 9);
-		TraceIn("DEPTH", 9);
+		EnterRule("DEPTH", 10);
+		TraceIn("DEPTH", 10);
 		try
 		{
 			int _type = DEPTH;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:52:6: ( '-depth' )
+			// ./find/Find.g:55:6: ( '-depth' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:52:7: '-depth'
+			// ./find/Find.g:55:7: '-depth'
 			{
-			DebugLocation(52, 7);
+			DebugLocation(55, 7);
 			Match("-depth"); 
 
 
@@ -395,8 +430,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("DEPTH", 9);
-			LeaveRule("DEPTH", 9);
+			TraceOut("DEPTH", 10);
+			LeaveRule("DEPTH", 10);
 			LeaveRule_DEPTH();
 		}
 	}
@@ -410,17 +445,17 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mLPAREN()
 	{
 		EnterRule_LPAREN();
-		EnterRule("LPAREN", 10);
-		TraceIn("LPAREN", 10);
+		EnterRule("LPAREN", 11);
+		TraceIn("LPAREN", 11);
 		try
 		{
 			int _type = LPAREN;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:53:7: ( '-(' )
+			// ./find/Find.g:56:7: ( '-(' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:53:9: '-('
+			// ./find/Find.g:56:9: '-('
 			{
-			DebugLocation(53, 9);
+			DebugLocation(56, 9);
 			Match("-("); 
 
 
@@ -431,8 +466,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("LPAREN", 10);
-			LeaveRule("LPAREN", 10);
+			TraceOut("LPAREN", 11);
+			LeaveRule("LPAREN", 11);
 			LeaveRule_LPAREN();
 		}
 	}
@@ -446,17 +481,17 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mRPAREN()
 	{
 		EnterRule_RPAREN();
-		EnterRule("RPAREN", 11);
-		TraceIn("RPAREN", 11);
+		EnterRule("RPAREN", 12);
+		TraceIn("RPAREN", 12);
 		try
 		{
 			int _type = RPAREN;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:54:7: ( '-)' )
+			// ./find/Find.g:57:7: ( '-)' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:54:10: '-)'
+			// ./find/Find.g:57:10: '-)'
 			{
-			DebugLocation(54, 10);
+			DebugLocation(57, 10);
 			Match("-)"); 
 
 
@@ -467,8 +502,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("RPAREN", 11);
-			LeaveRule("RPAREN", 11);
+			TraceOut("RPAREN", 12);
+			LeaveRule("RPAREN", 12);
 			LeaveRule_RPAREN();
 		}
 	}
@@ -482,13 +517,13 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mAND()
 	{
 		EnterRule_AND();
-		EnterRule("AND", 12);
-		TraceIn("AND", 12);
+		EnterRule("AND", 13);
+		TraceIn("AND", 13);
 		try
 		{
 			int _type = AND;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:55:4: ( '-AND' | '-and' | '-&&' )
+			// ./find/Find.g:58:4: ( '-AND' | '-and' | '-&&' )
 			int alt1=3;
 			try { DebugEnterDecision(1, false);
 			int LA1_0 = input.LA(1);
@@ -532,9 +567,9 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// ./find/Find.g:55:7: '-AND'
+				// ./find/Find.g:58:7: '-AND'
 				{
-				DebugLocation(55, 7);
+				DebugLocation(58, 7);
 				Match("-AND"); 
 
 
@@ -542,9 +577,9 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// ./find/Find.g:55:15: '-and'
+				// ./find/Find.g:58:15: '-and'
 				{
-				DebugLocation(55, 15);
+				DebugLocation(58, 15);
 				Match("-and"); 
 
 
@@ -552,9 +587,9 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// ./find/Find.g:55:24: '-&&'
+				// ./find/Find.g:58:24: '-&&'
 				{
-				DebugLocation(55, 24);
+				DebugLocation(58, 24);
 				Match("-&&"); 
 
 
@@ -567,8 +602,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("AND", 12);
-			LeaveRule("AND", 12);
+			TraceOut("AND", 13);
+			LeaveRule("AND", 13);
 			LeaveRule_AND();
 		}
 	}
@@ -582,13 +617,13 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mOR()
 	{
 		EnterRule_OR();
-		EnterRule("OR", 13);
-		TraceIn("OR", 13);
+		EnterRule("OR", 14);
+		TraceIn("OR", 14);
 		try
 		{
 			int _type = OR;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:56:3: ( '-OR' | '-or' | '-||' )
+			// ./find/Find.g:59:3: ( '-OR' | '-or' | '-||' )
 			int alt2=3;
 			try { DebugEnterDecision(2, false);
 			int LA2_0 = input.LA(1);
@@ -632,9 +667,9 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// ./find/Find.g:56:6: '-OR'
+				// ./find/Find.g:59:6: '-OR'
 				{
-				DebugLocation(56, 6);
+				DebugLocation(59, 6);
 				Match("-OR"); 
 
 
@@ -642,9 +677,9 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// ./find/Find.g:56:14: '-or'
+				// ./find/Find.g:59:14: '-or'
 				{
-				DebugLocation(56, 14);
+				DebugLocation(59, 14);
 				Match("-or"); 
 
 
@@ -652,9 +687,9 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// ./find/Find.g:56:21: '-||'
+				// ./find/Find.g:59:21: '-||'
 				{
-				DebugLocation(56, 21);
+				DebugLocation(59, 21);
 				Match("-||"); 
 
 
@@ -667,8 +702,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("OR", 13);
-			LeaveRule("OR", 13);
+			TraceOut("OR", 14);
+			LeaveRule("OR", 14);
 			LeaveRule_OR();
 		}
 	}
@@ -682,13 +717,13 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mNOT()
 	{
 		EnterRule_NOT();
-		EnterRule("NOT", 14);
-		TraceIn("NOT", 14);
+		EnterRule("NOT", 15);
+		TraceIn("NOT", 15);
 		try
 		{
 			int _type = NOT;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:57:5: ( '-!' | '-NOT' | '-not' )
+			// ./find/Find.g:60:5: ( '-!' | '-NOT' | '-not' )
 			int alt3=3;
 			try { DebugEnterDecision(3, false);
 			int LA3_0 = input.LA(1);
@@ -732,9 +767,9 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// ./find/Find.g:57:8: '-!'
+				// ./find/Find.g:60:8: '-!'
 				{
-				DebugLocation(57, 8);
+				DebugLocation(60, 8);
 				Match("-!"); 
 
 
@@ -742,9 +777,9 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// ./find/Find.g:57:15: '-NOT'
+				// ./find/Find.g:60:15: '-NOT'
 				{
-				DebugLocation(57, 15);
+				DebugLocation(60, 15);
 				Match("-NOT"); 
 
 
@@ -752,9 +787,9 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// ./find/Find.g:57:24: '-not'
+				// ./find/Find.g:60:24: '-not'
 				{
-				DebugLocation(57, 24);
+				DebugLocation(60, 24);
 				Match("-not"); 
 
 
@@ -767,136 +802,12 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("NOT", 14);
-			LeaveRule("NOT", 14);
+			TraceOut("NOT", 15);
+			LeaveRule("NOT", 15);
 			LeaveRule_NOT();
 		}
 	}
 	// $ANTLR end "NOT"
-
-	partial void EnterRule_INTEGER();
-	partial void LeaveRule_INTEGER();
-
-	// $ANTLR start "INTEGER"
-	[GrammarRule("INTEGER")]
-	private void mINTEGER()
-	{
-		EnterRule_INTEGER();
-		EnterRule("INTEGER", 15);
-		TraceIn("INTEGER", 15);
-		try
-		{
-			int _type = INTEGER;
-			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:58:8: ( ( '0' .. '9' )+ )
-			DebugEnterAlt(1);
-			// ./find/Find.g:58:10: ( '0' .. '9' )+
-			{
-			DebugLocation(58, 10);
-			// ./find/Find.g:58:10: ( '0' .. '9' )+
-			int cnt4=0;
-			try { DebugEnterSubRule(4);
-			while (true)
-			{
-				int alt4=2;
-				try { DebugEnterDecision(4, false);
-				int LA4_0 = input.LA(1);
-
-				if (((LA4_0>='0' && LA4_0<='9')))
-				{
-					alt4 = 1;
-				}
-
-
-				} finally { DebugExitDecision(4); }
-				switch (alt4)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// ./find/Find.g:
-					{
-					DebugLocation(58, 10);
-					input.Consume();
-
-
-					}
-					break;
-
-				default:
-					if (cnt4 >= 1)
-						goto loop4;
-
-					EarlyExitException eee4 = new EarlyExitException( 4, input );
-					DebugRecognitionException(eee4);
-					throw eee4;
-				}
-				cnt4++;
-			}
-			loop4:
-				;
-
-			} finally { DebugExitSubRule(4); }
-
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally
-		{
-			TraceOut("INTEGER", 15);
-			LeaveRule("INTEGER", 15);
-			LeaveRule_INTEGER();
-		}
-	}
-	// $ANTLR end "INTEGER"
-
-	partial void EnterRule_SIZEPOSTFIX();
-	partial void LeaveRule_SIZEPOSTFIX();
-
-	// $ANTLR start "SIZEPOSTFIX"
-	[GrammarRule("SIZEPOSTFIX")]
-	private void mSIZEPOSTFIX()
-	{
-		EnterRule_SIZEPOSTFIX();
-		EnterRule("SIZEPOSTFIX", 16);
-		TraceIn("SIZEPOSTFIX", 16);
-		try
-		{
-			int _type = SIZEPOSTFIX;
-			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:59:12: ( ( 'c' | 'w' | 'k' | 'M' | 'G' | 'b' ) )
-			DebugEnterAlt(1);
-			// ./find/Find.g:
-			{
-			DebugLocation(59, 12);
-			if (input.LA(1)=='G'||input.LA(1)=='M'||(input.LA(1)>='b' && input.LA(1)<='c')||input.LA(1)=='k'||input.LA(1)=='w')
-			{
-				input.Consume();
-			}
-			else
-			{
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				DebugRecognitionException(mse);
-				Recover(mse);
-				throw mse;
-			}
-
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally
-		{
-			TraceOut("SIZEPOSTFIX", 16);
-			LeaveRule("SIZEPOSTFIX", 16);
-			LeaveRule_SIZEPOSTFIX();
-		}
-	}
-	// $ANTLR end "SIZEPOSTFIX"
 
 	partial void EnterRule_STRING_LITERAL();
 	partial void LeaveRule_STRING_LITERAL();
@@ -906,54 +817,54 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mSTRING_LITERAL()
 	{
 		EnterRule_STRING_LITERAL();
-		EnterRule("STRING_LITERAL", 17);
-		TraceIn("STRING_LITERAL", 17);
+		EnterRule("STRING_LITERAL", 16);
+		TraceIn("STRING_LITERAL", 16);
 		try
 		{
 			int _type = STRING_LITERAL;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:61:2: ( '\"' ( ESC |~ ( '\"' | '\\\\' | '\\n' | '\\r' ) )* '\"' )
+			// ./find/Find.g:62:2: ( '\"' ( ESC |~ ( '\"' | '\\\\' | '\\n' | '\\r' ) )* '\"' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:61:4: '\"' ( ESC |~ ( '\"' | '\\\\' | '\\n' | '\\r' ) )* '\"'
+			// ./find/Find.g:62:4: '\"' ( ESC |~ ( '\"' | '\\\\' | '\\n' | '\\r' ) )* '\"'
 			{
-			DebugLocation(61, 4);
+			DebugLocation(62, 4);
 			Match('\"'); 
-			DebugLocation(61, 8);
-			// ./find/Find.g:61:8: ( ESC |~ ( '\"' | '\\\\' | '\\n' | '\\r' ) )*
-			try { DebugEnterSubRule(5);
+			DebugLocation(62, 8);
+			// ./find/Find.g:62:8: ( ESC |~ ( '\"' | '\\\\' | '\\n' | '\\r' ) )*
+			try { DebugEnterSubRule(4);
 			while (true)
 			{
-				int alt5=3;
-				try { DebugEnterDecision(5, false);
-				int LA5_0 = input.LA(1);
+				int alt4=3;
+				try { DebugEnterDecision(4, false);
+				int LA4_0 = input.LA(1);
 
-				if ((LA5_0=='\\'))
+				if ((LA4_0=='\\'))
 				{
-					alt5 = 1;
+					alt4 = 1;
 				}
-				else if (((LA5_0>='\u0000' && LA5_0<='\t')||(LA5_0>='\u000B' && LA5_0<='\f')||(LA5_0>='\u000E' && LA5_0<='!')||(LA5_0>='#' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFF')))
+				else if (((LA4_0>='\u0000' && LA4_0<='\t')||(LA4_0>='\u000B' && LA4_0<='\f')||(LA4_0>='\u000E' && LA4_0<='!')||(LA4_0>='#' && LA4_0<='[')||(LA4_0>=']' && LA4_0<='\uFFFF')))
 				{
-					alt5 = 2;
+					alt4 = 2;
 				}
 
 
-				} finally { DebugExitDecision(5); }
-				switch ( alt5 )
+				} finally { DebugExitDecision(4); }
+				switch ( alt4 )
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// ./find/Find.g:61:9: ESC
+					// ./find/Find.g:62:9: ESC
 					{
-					DebugLocation(61, 9);
+					DebugLocation(62, 9);
 					mESC(); 
 
 					}
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// ./find/Find.g:61:13: ~ ( '\"' | '\\\\' | '\\n' | '\\r' )
+					// ./find/Find.g:62:13: ~ ( '\"' | '\\\\' | '\\n' | '\\r' )
 					{
-					DebugLocation(61, 13);
+					DebugLocation(62, 13);
 					input.Consume();
 
 
@@ -961,16 +872,16 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					goto loop5;
+					goto loop4;
 				}
 			}
 
-			loop5:
+			loop4:
 				;
 
-			} finally { DebugExitSubRule(5); }
+			} finally { DebugExitSubRule(4); }
 
-			DebugLocation(61, 37);
+			DebugLocation(62, 37);
 			Match('\"'); 
 
 			}
@@ -980,8 +891,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("STRING_LITERAL", 17);
-			LeaveRule("STRING_LITERAL", 17);
+			TraceOut("STRING_LITERAL", 16);
+			LeaveRule("STRING_LITERAL", 16);
 			LeaveRule_STRING_LITERAL();
 		}
 	}
@@ -995,68 +906,68 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	protected void mESC()
 	{
 		EnterRule_ESC();
-		EnterRule("ESC", 18);
-		TraceIn("ESC", 18);
+		EnterRule("ESC", 17);
+		TraceIn("ESC", 17);
 		try
 		{
 			int _type = ESC;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:74:2: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | ( 'u' )+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
+			// ./find/Find.g:75:2: ( '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | ( 'u' )+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? ) )
 			DebugEnterAlt(1);
-			// ./find/Find.g:74:4: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | ( 'u' )+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+			// ./find/Find.g:75:4: '\\\\' ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | ( 'u' )+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
 			{
-			DebugLocation(74, 4);
+			DebugLocation(75, 4);
 			Match('\\'); 
-			DebugLocation(75, 3);
-			// ./find/Find.g:75:3: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | ( 'u' )+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
-			int alt10=11;
-			try { DebugEnterSubRule(10);
-			try { DebugEnterDecision(10, false);
+			DebugLocation(76, 3);
+			// ./find/Find.g:76:3: ( 'n' | 'r' | 't' | 'b' | 'f' | '\"' | '\\'' | '\\\\' | ( 'u' )+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT | '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )? | '4' .. '7' ( '0' .. '7' )? )
+			int alt9=11;
+			try { DebugEnterSubRule(9);
+			try { DebugEnterDecision(9, false);
 			switch (input.LA(1))
 			{
 			case 'n':
 				{
-				alt10 = 1;
+				alt9 = 1;
 				}
 				break;
 			case 'r':
 				{
-				alt10 = 2;
+				alt9 = 2;
 				}
 				break;
 			case 't':
 				{
-				alt10 = 3;
+				alt9 = 3;
 				}
 				break;
 			case 'b':
 				{
-				alt10 = 4;
+				alt9 = 4;
 				}
 				break;
 			case 'f':
 				{
-				alt10 = 5;
+				alt9 = 5;
 				}
 				break;
 			case '\"':
 				{
-				alt10 = 6;
+				alt9 = 6;
 				}
 				break;
 			case '\'':
 				{
-				alt10 = 7;
+				alt9 = 7;
 				}
 				break;
 			case '\\':
 				{
-				alt10 = 8;
+				alt9 = 8;
 				}
 				break;
 			case 'u':
 				{
-				alt10 = 9;
+				alt9 = 9;
 				}
 				break;
 			case '0':
@@ -1064,7 +975,7 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 			case '2':
 			case '3':
 				{
-				alt10 = 10;
+				alt9 = 10;
 				}
 				break;
 			case '4':
@@ -1072,159 +983,223 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 			case '6':
 			case '7':
 				{
-				alt10 = 11;
+				alt9 = 11;
 				}
 				break;
 			default:
 				{
-					NoViableAltException nvae = new NoViableAltException("", 10, 0, input);
+					NoViableAltException nvae = new NoViableAltException("", 9, 0, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(10); }
-			switch (alt10)
+			} finally { DebugExitDecision(9); }
+			switch (alt9)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// ./find/Find.g:75:5: 'n'
+				// ./find/Find.g:76:5: 'n'
 				{
-				DebugLocation(75, 5);
+				DebugLocation(76, 5);
 				Match('n'); 
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// ./find/Find.g:76:5: 'r'
+				// ./find/Find.g:77:5: 'r'
 				{
-				DebugLocation(76, 5);
+				DebugLocation(77, 5);
 				Match('r'); 
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// ./find/Find.g:77:5: 't'
+				// ./find/Find.g:78:5: 't'
 				{
-				DebugLocation(77, 5);
+				DebugLocation(78, 5);
 				Match('t'); 
 
 				}
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// ./find/Find.g:78:5: 'b'
+				// ./find/Find.g:79:5: 'b'
 				{
-				DebugLocation(78, 5);
+				DebugLocation(79, 5);
 				Match('b'); 
 
 				}
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// ./find/Find.g:79:5: 'f'
+				// ./find/Find.g:80:5: 'f'
 				{
-				DebugLocation(79, 5);
+				DebugLocation(80, 5);
 				Match('f'); 
 
 				}
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// ./find/Find.g:80:5: '\"'
+				// ./find/Find.g:81:5: '\"'
 				{
-				DebugLocation(80, 5);
+				DebugLocation(81, 5);
 				Match('\"'); 
 
 				}
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// ./find/Find.g:81:5: '\\''
+				// ./find/Find.g:82:5: '\\''
 				{
-				DebugLocation(81, 5);
+				DebugLocation(82, 5);
 				Match('\''); 
 
 				}
 				break;
 			case 8:
 				DebugEnterAlt(8);
-				// ./find/Find.g:82:5: '\\\\'
+				// ./find/Find.g:83:5: '\\\\'
 				{
-				DebugLocation(82, 5);
+				DebugLocation(83, 5);
 				Match('\\'); 
 
 				}
 				break;
 			case 9:
 				DebugEnterAlt(9);
-				// ./find/Find.g:83:5: ( 'u' )+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+				// ./find/Find.g:84:5: ( 'u' )+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
 				{
-				DebugLocation(83, 5);
-				// ./find/Find.g:83:5: ( 'u' )+
-				int cnt6=0;
-				try { DebugEnterSubRule(6);
+				DebugLocation(84, 5);
+				// ./find/Find.g:84:5: ( 'u' )+
+				int cnt5=0;
+				try { DebugEnterSubRule(5);
 				while (true)
 				{
-					int alt6=2;
-					try { DebugEnterDecision(6, false);
-					int LA6_0 = input.LA(1);
+					int alt5=2;
+					try { DebugEnterDecision(5, false);
+					int LA5_0 = input.LA(1);
 
-					if ((LA6_0=='u'))
+					if ((LA5_0=='u'))
 					{
-						alt6 = 1;
+						alt5 = 1;
 					}
 
 
-					} finally { DebugExitDecision(6); }
-					switch (alt6)
+					} finally { DebugExitDecision(5); }
+					switch (alt5)
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// ./find/Find.g:83:6: 'u'
+						// ./find/Find.g:84:6: 'u'
 						{
-						DebugLocation(83, 6);
+						DebugLocation(84, 6);
 						Match('u'); 
 
 						}
 						break;
 
 					default:
-						if (cnt6 >= 1)
-							goto loop6;
+						if (cnt5 >= 1)
+							goto loop5;
 
-						EarlyExitException eee6 = new EarlyExitException( 6, input );
-						DebugRecognitionException(eee6);
-						throw eee6;
+						EarlyExitException eee5 = new EarlyExitException( 5, input );
+						DebugRecognitionException(eee5);
+						throw eee5;
 					}
-					cnt6++;
+					cnt5++;
 				}
-				loop6:
+				loop5:
 					;
 
-				} finally { DebugExitSubRule(6); }
+				} finally { DebugExitSubRule(5); }
 
-				DebugLocation(83, 12);
+				DebugLocation(84, 12);
 				mHEX_DIGIT(); 
-				DebugLocation(83, 22);
+				DebugLocation(84, 22);
 				mHEX_DIGIT(); 
-				DebugLocation(83, 32);
+				DebugLocation(84, 32);
 				mHEX_DIGIT(); 
-				DebugLocation(83, 42);
+				DebugLocation(84, 42);
 				mHEX_DIGIT(); 
 
 				}
 				break;
 			case 10:
 				DebugEnterAlt(10);
-				// ./find/Find.g:84:5: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
+				// ./find/Find.g:85:5: '0' .. '3' ( '0' .. '7' ( '0' .. '7' )? )?
 				{
-				DebugLocation(84, 5);
+				DebugLocation(85, 5);
 				MatchRange('0','3'); 
-				DebugLocation(85, 4);
-				// ./find/Find.g:85:4: ( '0' .. '7' ( '0' .. '7' )? )?
+				DebugLocation(86, 4);
+				// ./find/Find.g:86:4: ( '0' .. '7' ( '0' .. '7' )? )?
+				int alt7=2;
+				try { DebugEnterSubRule(7);
+				try { DebugEnterDecision(7, false);
+				int LA7_0 = input.LA(1);
+
+				if (((LA7_0>='0' && LA7_0<='7')))
+				{
+					alt7 = 1;
+				}
+				} finally { DebugExitDecision(7); }
+				switch (alt7)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// ./find/Find.g:90:6: '0' .. '7' ( '0' .. '7' )?
+					{
+					DebugLocation(90, 6);
+					MatchRange('0','7'); 
+					DebugLocation(91, 5);
+					// ./find/Find.g:91:5: ( '0' .. '7' )?
+					int alt6=2;
+					try { DebugEnterSubRule(6);
+					try { DebugEnterDecision(6, false);
+					int LA6_0 = input.LA(1);
+
+					if (((LA6_0>='0' && LA6_0<='7')))
+					{
+						alt6 = 1;
+					}
+					} finally { DebugExitDecision(6); }
+					switch (alt6)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// ./find/Find.g:
+						{
+						DebugLocation(91, 5);
+						input.Consume();
+
+
+						}
+						break;
+
+					}
+					} finally { DebugExitSubRule(6); }
+
+
+					}
+					break;
+
+				}
+				} finally { DebugExitSubRule(7); }
+
+
+				}
+				break;
+			case 11:
+				DebugEnterAlt(11);
+				// ./find/Find.g:98:5: '4' .. '7' ( '0' .. '7' )?
+				{
+				DebugLocation(98, 5);
+				MatchRange('4','7'); 
+				DebugLocation(99, 4);
+				// ./find/Find.g:99:4: ( '0' .. '7' )?
 				int alt8=2;
 				try { DebugEnterSubRule(8);
 				try { DebugEnterDecision(8, false);
@@ -1239,37 +1214,10 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// ./find/Find.g:89:6: '0' .. '7' ( '0' .. '7' )?
+					// ./find/Find.g:
 					{
-					DebugLocation(89, 6);
-					MatchRange('0','7'); 
-					DebugLocation(90, 5);
-					// ./find/Find.g:90:5: ( '0' .. '7' )?
-					int alt7=2;
-					try { DebugEnterSubRule(7);
-					try { DebugEnterDecision(7, false);
-					int LA7_0 = input.LA(1);
-
-					if (((LA7_0>='0' && LA7_0<='7')))
-					{
-						alt7 = 1;
-					}
-					} finally { DebugExitDecision(7); }
-					switch (alt7)
-					{
-					case 1:
-						DebugEnterAlt(1);
-						// ./find/Find.g:
-						{
-						DebugLocation(90, 5);
-						input.Consume();
-
-
-						}
-						break;
-
-					}
-					} finally { DebugExitSubRule(7); }
+					DebugLocation(99, 4);
+					input.Consume();
 
 
 					}
@@ -1281,46 +1229,9 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 
 				}
 				break;
-			case 11:
-				DebugEnterAlt(11);
-				// ./find/Find.g:97:5: '4' .. '7' ( '0' .. '7' )?
-				{
-				DebugLocation(97, 5);
-				MatchRange('4','7'); 
-				DebugLocation(98, 4);
-				// ./find/Find.g:98:4: ( '0' .. '7' )?
-				int alt9=2;
-				try { DebugEnterSubRule(9);
-				try { DebugEnterDecision(9, false);
-				int LA9_0 = input.LA(1);
-
-				if (((LA9_0>='0' && LA9_0<='7')))
-				{
-					alt9 = 1;
-				}
-				} finally { DebugExitDecision(9); }
-				switch (alt9)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// ./find/Find.g:
-					{
-					DebugLocation(98, 4);
-					input.Consume();
-
-
-					}
-					break;
-
-				}
-				} finally { DebugExitSubRule(9); }
-
-
-				}
-				break;
 
 			}
-			} finally { DebugExitSubRule(10); }
+			} finally { DebugExitSubRule(9); }
 
 
 			}
@@ -1330,8 +1241,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("ESC", 18);
-			LeaveRule("ESC", 18);
+			TraceOut("ESC", 17);
+			LeaveRule("ESC", 17);
 			LeaveRule_ESC();
 		}
 	}
@@ -1345,17 +1256,17 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	protected void mHEX_DIGIT()
 	{
 		EnterRule_HEX_DIGIT();
-		EnterRule("HEX_DIGIT", 19);
-		TraceIn("HEX_DIGIT", 19);
+		EnterRule("HEX_DIGIT", 18);
+		TraceIn("HEX_DIGIT", 18);
 		try
 		{
 			int _type = HEX_DIGIT;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:111:2: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
+			// ./find/Find.g:112:2: ( ( '0' .. '9' | 'A' .. 'F' | 'a' .. 'f' ) )
 			DebugEnterAlt(1);
 			// ./find/Find.g:
 			{
-			DebugLocation(111, 2);
+			DebugLocation(112, 2);
 			if ((input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f'))
 			{
 				input.Consume();
@@ -1376,8 +1287,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("HEX_DIGIT", 19);
-			LeaveRule("HEX_DIGIT", 19);
+			TraceOut("HEX_DIGIT", 18);
+			LeaveRule("HEX_DIGIT", 18);
 			LeaveRule_HEX_DIGIT();
 		}
 	}
@@ -1391,39 +1302,39 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mUNQOTED_LITERAL()
 	{
 		EnterRule_UNQOTED_LITERAL();
-		EnterRule("UNQOTED_LITERAL", 20);
-		TraceIn("UNQOTED_LITERAL", 20);
+		EnterRule("UNQOTED_LITERAL", 19);
+		TraceIn("UNQOTED_LITERAL", 19);
 		try
 		{
 			int _type = UNQOTED_LITERAL;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:113:2: ( (~ ( ' ' | '-' | '=' ) )* )
+			// ./find/Find.g:114:2: ( (~ ( ' ' | '-' | '=' ) )* )
 			DebugEnterAlt(1);
-			// ./find/Find.g:113:4: (~ ( ' ' | '-' | '=' ) )*
+			// ./find/Find.g:114:4: (~ ( ' ' | '-' | '=' ) )*
 			{
-			DebugLocation(113, 4);
-			// ./find/Find.g:113:4: (~ ( ' ' | '-' | '=' ) )*
-			try { DebugEnterSubRule(11);
+			DebugLocation(114, 4);
+			// ./find/Find.g:114:4: (~ ( ' ' | '-' | '=' ) )*
+			try { DebugEnterSubRule(10);
 			while (true)
 			{
-				int alt11=2;
-				try { DebugEnterDecision(11, false);
-				int LA11_0 = input.LA(1);
+				int alt10=2;
+				try { DebugEnterDecision(10, false);
+				int LA10_0 = input.LA(1);
 
-				if (((LA11_0>='\u0000' && LA11_0<='\u001F')||(LA11_0>='!' && LA11_0<=',')||(LA11_0>='.' && LA11_0<='<')||(LA11_0>='>' && LA11_0<='\uFFFF')))
+				if (((LA10_0>='\u0000' && LA10_0<='\u001F')||(LA10_0>='!' && LA10_0<=',')||(LA10_0>='.' && LA10_0<='<')||(LA10_0>='>' && LA10_0<='\uFFFF')))
 				{
-					alt11 = 1;
+					alt10 = 1;
 				}
 
 
-				} finally { DebugExitDecision(11); }
-				switch ( alt11 )
+				} finally { DebugExitDecision(10); }
+				switch ( alt10 )
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// ./find/Find.g:
 					{
-					DebugLocation(113, 4);
+					DebugLocation(114, 4);
 					input.Consume();
 
 
@@ -1431,14 +1342,14 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					goto loop11;
+					goto loop10;
 				}
 			}
 
-			loop11:
+			loop10:
 				;
 
-			} finally { DebugExitSubRule(11); }
+			} finally { DebugExitSubRule(10); }
 
 
 			}
@@ -1448,8 +1359,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("UNQOTED_LITERAL", 20);
-			LeaveRule("UNQOTED_LITERAL", 20);
+			TraceOut("UNQOTED_LITERAL", 19);
+			LeaveRule("UNQOTED_LITERAL", 19);
 			LeaveRule_UNQOTED_LITERAL();
 		}
 	}
@@ -1463,17 +1374,17 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mEQ()
 	{
 		EnterRule_EQ();
-		EnterRule("EQ", 21);
-		TraceIn("EQ", 21);
+		EnterRule("EQ", 20);
+		TraceIn("EQ", 20);
 		try
 		{
 			int _type = EQ;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:114:4: ( '=' )
+			// ./find/Find.g:115:4: ( '=' )
 			DebugEnterAlt(1);
-			// ./find/Find.g:114:6: '='
+			// ./find/Find.g:115:6: '='
 			{
-			DebugLocation(114, 6);
+			DebugLocation(115, 6);
 			Match('='); 
 
 			}
@@ -1483,8 +1394,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("EQ", 21);
-			LeaveRule("EQ", 21);
+			TraceOut("EQ", 20);
+			LeaveRule("EQ", 20);
 			LeaveRule_EQ();
 		}
 	}
@@ -1498,40 +1409,40 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 	private void mWS()
 	{
 		EnterRule_WS();
-		EnterRule("WS", 22);
-		TraceIn("WS", 22);
+		EnterRule("WS", 21);
+		TraceIn("WS", 21);
 		try
 		{
 			int _type = WS;
 			int _channel = DefaultTokenChannel;
-			// ./find/Find.g:115:4: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+			// ./find/Find.g:116:4: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
 			DebugEnterAlt(1);
-			// ./find/Find.g:115:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// ./find/Find.g:116:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			{
-			DebugLocation(115, 6);
-			// ./find/Find.g:115:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
-			int cnt12=0;
-			try { DebugEnterSubRule(12);
+			DebugLocation(116, 6);
+			// ./find/Find.g:116:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			int cnt11=0;
+			try { DebugEnterSubRule(11);
 			while (true)
 			{
-				int alt12=2;
-				try { DebugEnterDecision(12, false);
-				int LA12_0 = input.LA(1);
+				int alt11=2;
+				try { DebugEnterDecision(11, false);
+				int LA11_0 = input.LA(1);
 
-				if (((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' '))
+				if (((LA11_0>='\t' && LA11_0<='\n')||LA11_0=='\r'||LA11_0==' '))
 				{
-					alt12 = 1;
+					alt11 = 1;
 				}
 
 
-				} finally { DebugExitDecision(12); }
-				switch (alt12)
+				} finally { DebugExitDecision(11); }
+				switch (alt11)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// ./find/Find.g:
 					{
-					DebugLocation(115, 6);
+					DebugLocation(116, 6);
 					input.Consume();
 
 
@@ -1539,21 +1450,21 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt12 >= 1)
-						goto loop12;
+					if (cnt11 >= 1)
+						goto loop11;
 
-					EarlyExitException eee12 = new EarlyExitException( 12, input );
-					DebugRecognitionException(eee12);
-					throw eee12;
+					EarlyExitException eee11 = new EarlyExitException( 11, input );
+					DebugRecognitionException(eee11);
+					throw eee11;
 				}
-				cnt12++;
+				cnt11++;
 			}
-			loop12:
+			loop11:
 				;
 
-			} finally { DebugExitSubRule(12); }
+			} finally { DebugExitSubRule(11); }
 
-			DebugLocation(115, 34);
+			DebugLocation(116, 34);
 			_channel = Hidden ;
 
 			}
@@ -1563,8 +1474,8 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("WS", 22);
-			LeaveRule("WS", 22);
+			TraceOut("WS", 21);
+			LeaveRule("WS", 21);
 			LeaveRule_WS();
 		}
 	}
@@ -1572,36 +1483,36 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// ./find/Find.g:1:8: ( T__24 | T__25 | NAME | INAME | REGEX | IREGEX | TYPE | SIZE | DEPTH | LPAREN | RPAREN | AND | OR | NOT | INTEGER | SIZEPOSTFIX | STRING_LITERAL | ESC | HEX_DIGIT | UNQOTED_LITERAL | EQ | WS )
-		int alt13=22;
-		try { DebugEnterDecision(13, false);
+		// ./find/Find.g:1:8: ( T__23 | T__24 | NAME | INAME | REGEX | IREGEX | PATH | TYPE | SIZE | DEPTH | LPAREN | RPAREN | AND | OR | NOT | STRING_LITERAL | ESC | HEX_DIGIT | UNQOTED_LITERAL | EQ | WS )
+		int alt12=21;
+		try { DebugEnterDecision(12, false);
 		try
 		{
-			alt13 = dfa13.Predict(input);
+			alt12 = dfa12.Predict(input);
 		}
 		catch (NoViableAltException nvae)
 		{
 			DebugRecognitionException(nvae);
 			throw;
 		}
-		} finally { DebugExitDecision(13); }
-		switch (alt13)
+		} finally { DebugExitDecision(12); }
+		switch (alt12)
 		{
 		case 1:
 			DebugEnterAlt(1);
-			// ./find/Find.g:1:10: T__24
+			// ./find/Find.g:1:10: T__23
 			{
 			DebugLocation(1, 10);
-			mT__24(); 
+			mT__23(); 
 
 			}
 			break;
 		case 2:
 			DebugEnterAlt(2);
-			// ./find/Find.g:1:16: T__25
+			// ./find/Find.g:1:16: T__24
 			{
 			DebugLocation(1, 16);
-			mT__25(); 
+			mT__24(); 
 
 			}
 			break;
@@ -1643,144 +1554,135 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 			break;
 		case 7:
 			DebugEnterAlt(7);
-			// ./find/Find.g:1:46: TYPE
+			// ./find/Find.g:1:46: PATH
 			{
 			DebugLocation(1, 46);
-			mTYPE(); 
+			mPATH(); 
 
 			}
 			break;
 		case 8:
 			DebugEnterAlt(8);
-			// ./find/Find.g:1:51: SIZE
+			// ./find/Find.g:1:51: TYPE
 			{
 			DebugLocation(1, 51);
-			mSIZE(); 
+			mTYPE(); 
 
 			}
 			break;
 		case 9:
 			DebugEnterAlt(9);
-			// ./find/Find.g:1:56: DEPTH
+			// ./find/Find.g:1:56: SIZE
 			{
 			DebugLocation(1, 56);
-			mDEPTH(); 
+			mSIZE(); 
 
 			}
 			break;
 		case 10:
 			DebugEnterAlt(10);
-			// ./find/Find.g:1:62: LPAREN
+			// ./find/Find.g:1:61: DEPTH
 			{
-			DebugLocation(1, 62);
-			mLPAREN(); 
+			DebugLocation(1, 61);
+			mDEPTH(); 
 
 			}
 			break;
 		case 11:
 			DebugEnterAlt(11);
-			// ./find/Find.g:1:69: RPAREN
+			// ./find/Find.g:1:67: LPAREN
 			{
-			DebugLocation(1, 69);
-			mRPAREN(); 
+			DebugLocation(1, 67);
+			mLPAREN(); 
 
 			}
 			break;
 		case 12:
 			DebugEnterAlt(12);
-			// ./find/Find.g:1:76: AND
+			// ./find/Find.g:1:74: RPAREN
 			{
-			DebugLocation(1, 76);
-			mAND(); 
+			DebugLocation(1, 74);
+			mRPAREN(); 
 
 			}
 			break;
 		case 13:
 			DebugEnterAlt(13);
-			// ./find/Find.g:1:80: OR
+			// ./find/Find.g:1:81: AND
 			{
-			DebugLocation(1, 80);
-			mOR(); 
+			DebugLocation(1, 81);
+			mAND(); 
 
 			}
 			break;
 		case 14:
 			DebugEnterAlt(14);
-			// ./find/Find.g:1:83: NOT
+			// ./find/Find.g:1:85: OR
 			{
-			DebugLocation(1, 83);
-			mNOT(); 
+			DebugLocation(1, 85);
+			mOR(); 
 
 			}
 			break;
 		case 15:
 			DebugEnterAlt(15);
-			// ./find/Find.g:1:87: INTEGER
+			// ./find/Find.g:1:88: NOT
 			{
-			DebugLocation(1, 87);
-			mINTEGER(); 
+			DebugLocation(1, 88);
+			mNOT(); 
 
 			}
 			break;
 		case 16:
 			DebugEnterAlt(16);
-			// ./find/Find.g:1:95: SIZEPOSTFIX
+			// ./find/Find.g:1:92: STRING_LITERAL
 			{
-			DebugLocation(1, 95);
-			mSIZEPOSTFIX(); 
+			DebugLocation(1, 92);
+			mSTRING_LITERAL(); 
 
 			}
 			break;
 		case 17:
 			DebugEnterAlt(17);
-			// ./find/Find.g:1:107: STRING_LITERAL
+			// ./find/Find.g:1:107: ESC
 			{
 			DebugLocation(1, 107);
-			mSTRING_LITERAL(); 
+			mESC(); 
 
 			}
 			break;
 		case 18:
 			DebugEnterAlt(18);
-			// ./find/Find.g:1:122: ESC
+			// ./find/Find.g:1:111: HEX_DIGIT
 			{
-			DebugLocation(1, 122);
-			mESC(); 
+			DebugLocation(1, 111);
+			mHEX_DIGIT(); 
 
 			}
 			break;
 		case 19:
 			DebugEnterAlt(19);
-			// ./find/Find.g:1:126: HEX_DIGIT
+			// ./find/Find.g:1:121: UNQOTED_LITERAL
 			{
-			DebugLocation(1, 126);
-			mHEX_DIGIT(); 
+			DebugLocation(1, 121);
+			mUNQOTED_LITERAL(); 
 
 			}
 			break;
 		case 20:
 			DebugEnterAlt(20);
-			// ./find/Find.g:1:136: UNQOTED_LITERAL
+			// ./find/Find.g:1:137: EQ
 			{
-			DebugLocation(1, 136);
-			mUNQOTED_LITERAL(); 
+			DebugLocation(1, 137);
+			mEQ(); 
 
 			}
 			break;
 		case 21:
 			DebugEnterAlt(21);
-			// ./find/Find.g:1:152: EQ
+			// ./find/Find.g:1:140: WS
 			{
-			DebugLocation(1, 152);
-			mEQ(); 
-
-			}
-			break;
-		case 22:
-			DebugEnterAlt(22);
-			// ./find/Find.g:1:155: WS
-			{
-			DebugLocation(1, 155);
+			DebugLocation(1, 140);
 			mWS(); 
 
 			}
@@ -1792,72 +1694,67 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 
 
 	#region DFA
-	DFA13 dfa13;
+	DFA12 dfa12;
 
 	protected override void InitDFAs()
 	{
 		base.InitDFAs();
-		dfa13 = new DFA13(this, SpecialStateTransition13);
+		dfa12 = new DFA12(this, SpecialStateTransition12);
 	}
 
-	private class DFA13 : DFA
+	private class DFA12 : DFA
 	{
-		private const string DFA13_eotS =
-			"\x1\xB\x1\xE\x1\xF\x1\xFFFF\x1\x1B\x1\x1D\x2\xB\x1\x1D\x1\x2D\x1\xB\x11"+
-			"\xFFFF\x1\x1B\x1\xFFFF\x2\xB\x1\x21\x1\xFFFF\x8\x3C\x1\xB\x2\x3C\x4\xFFFF"+
-			"\xB\xB\x1\xFFFF\x1\xB\x2\x3C\x4\xB\x1\x3C\x4\xB\x1\x3C\x1\xB";
-		private const string DFA13_eofS =
-			"\x4B\xFFFF";
-		private const string DFA13_minS =
-			"\x1\x9\x2\x0\x1\x21\x3\x0\x1\x22\x2\x0\x1\x9\x5\xFFFF\x1\x61\x1\x6E\xA"+
-			"\xFFFF\x1\x0\x1\xFFFF\x1\x22\x2\x0\x1\xFFFF\x8\x0\x1\x30\x2\x0\x4\xFFFF"+
-			"\x8\x0\x1\x30\x2\x0\x1\xFFFF\x1\x30\x2\x0\x1\x30\x2\x0\x1\x30\x1\x0\x1"+
-			"\x30\x1\x0\x2\x30\x2\x0";
-		private const string DFA13_maxS =
-			"\x1\x77\x2\xFFFF\x1\x7C\x3\xFFFF\x1\x75\x2\xFFFF\x1\x20\x5\xFFFF\x1\x6F"+
-			"\x1\x72\xA\xFFFF\x1\xFFFF\x1\xFFFF\x1\x75\x2\xFFFF\x1\xFFFF\x8\xFFFF"+
-			"\x1\x75\x2\xFFFF\x4\xFFFF\x8\xFFFF\x1\x75\x2\xFFFF\x1\xFFFF\x1\x66\x2"+
-			"\xFFFF\x1\x66\x2\xFFFF\x1\x66\x1\xFFFF\x1\x66\x1\xFFFF\x2\x66\x2\xFFFF";
-		private const string DFA13_acceptS =
-			"\xB\xFFFF\x1\x14\x1\x15\x1\x16\x1\x1\x1\x2\x2\xFFFF\x1\x5\x1\x7\x1\x8"+
-			"\x1\x9\x1\xA\x1\xB\x1\xC\x1\xD\x1\xE\x1\xF\x1\xFFFF\x1\x10\x3\xFFFF\x1"+
-			"\x11\xB\xFFFF\x1\x13\x1\x3\x1\x4\x1\x6\xB\xFFFF\x1\x12\xE\xFFFF";
-		private const string DFA13_specialS =
-			"\x1\xFFFF\x1\x1D\x1\x19\x1\xFFFF\x1\x6\x1\x23\x1\x8\x1\xFFFF\x1\x12\x1"+
-			"\x24\x12\xFFFF\x1\xA\x2\xFFFF\x1\x1A\x1\x1C\x1\xFFFF\x1\xF\x1\x11\x1"+
-			"\x13\x1\x14\x1\x15\x1\x16\x1\x17\x1\x18\x1\xFFFF\x1\xE\x1\x1E\x4\xFFFF"+
-			"\x1\x1\x1\x2\x1\x3\x1\x4\x1\x22\x1\x21\x1\x20\x1\x1F\x1\xFFFF\x1\x10"+
-			"\x1\x7\x2\xFFFF\x1\x9\x1\x0\x1\xFFFF\x1\xC\x1\xB\x1\xFFFF\x1\x1B\x1\xFFFF"+
-			"\x1\x25\x2\xFFFF\x1\xD\x1\x5}>";
-		private static readonly string[] DFA13_transitionS =
+		private const string DFA12_eotS =
+			"\x1\x8\x1\xB\x1\xC\x1\xFFFF\x2\x8\x1\x28\x1\x8\x11\xFFFF\x2\x8\x1\x1C"+
+			"\x1\xFFFF\x8\x37\x1\x8\x2\x37\x4\xFFFF\xB\x8\x1\xFFFF\x1\x8\x2\x37\x4"+
+			"\x8\x1\x37\x4\x8\x1\x37\x1\x8";
+		private const string DFA12_eofS =
+			"\x46\xFFFF";
+		private const string DFA12_minS =
+			"\x1\x9\x2\x0\x1\x21\x1\x0\x1\x22\x1\x0\x1\x9\x5\xFFFF\x1\x61\x1\x6E\xA"+
+			"\xFFFF\x1\x22\x2\x0\x1\xFFFF\x8\x0\x1\x30\x2\x0\x4\xFFFF\x8\x0\x1\x30"+
+			"\x2\x0\x1\xFFFF\x1\x30\x2\x0\x1\x30\x2\x0\x1\x30\x1\x0\x1\x30\x1\x0\x2"+
+			"\x30\x2\x0";
+		private const string DFA12_maxS =
+			"\x1\x66\x2\xFFFF\x1\x7C\x1\xFFFF\x1\x75\x1\xFFFF\x1\x20\x5\xFFFF\x1\x6F"+
+			"\x1\x72\xA\xFFFF\x1\x75\x2\xFFFF\x1\xFFFF\x8\xFFFF\x1\x75\x2\xFFFF\x4"+
+			"\xFFFF\x8\xFFFF\x1\x75\x2\xFFFF\x1\xFFFF\x1\x66\x2\xFFFF\x1\x66\x2\xFFFF"+
+			"\x1\x66\x1\xFFFF\x1\x66\x1\xFFFF\x2\x66\x2\xFFFF";
+		private const string DFA12_acceptS =
+			"\x8\xFFFF\x1\x13\x1\x14\x1\x15\x1\x1\x1\x2\x2\xFFFF\x1\x5\x1\x7\x1\x8"+
+			"\x1\x9\x1\xA\x1\xB\x1\xC\x1\xD\x1\xE\x1\xF\x3\xFFFF\x1\x10\xB\xFFFF\x1"+
+			"\x12\x1\x3\x1\x4\x1\x6\xB\xFFFF\x1\x11\xE\xFFFF";
+		private const string DFA12_specialS =
+			"\x1\xFFFF\x1\x17\x1\x15\x1\xFFFF\x1\x7\x1\xFFFF\x1\x13\x13\xFFFF\x1\x16"+
+			"\x1\x3\x1\xFFFF\x1\x20\x1\x1A\x1\x19\x1\x1C\x1\x1B\x1\xD\x1\xF\x1\xB"+
+			"\x1\xFFFF\x1\x1\x1\x1D\x4\xFFFF\x1\xC\x1\x10\x1\xE\x1\x6\x1\x5\x1\xA"+
+			"\x1\x8\x1\x1F\x1\xFFFF\x1\x21\x1\x11\x2\xFFFF\x1\x12\x1\x4\x1\xFFFF\x1"+
+			"\x0\x1\x9\x1\xFFFF\x1\x14\x1\xFFFF\x1\x1E\x2\xFFFF\x1\x18\x1\x2}>";
+		private static readonly string[] DFA12_transitionS =
 			{
-				"\x2\xA\x2\xFFFF\x1\xA\x12\xFFFF\x1\xD\x1\xFFFF\x1\x6\xA\xFFFF\x1\x3"+
-				"\x2\xFFFF\xA\x4\x3\xFFFF\x1\xC\x3\xFFFF\x6\x9\x1\x8\x5\xFFFF\x1\x8\xE"+
-				"\xFFFF\x1\x7\x4\xFFFF\x1\x9\x2\x5\x1\x1\x1\x9\x1\x2\x4\xFFFF\x1\x8\xB"+
-				"\xFFFF\x1\x8",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x1\x1A\x4\xFFFF\x1\x18\x1\xFFFF\x1\x16\x1\x17\x17\xFFFF\x1\x18\xC"+
-				"\xFFFF\x1\x1A\x1\x19\x11\xFFFF\x1\x18\x2\xFFFF\x1\x15\x4\xFFFF\x1\x11"+
-				"\x4\xFFFF\x1\x10\x1\x19\x2\xFFFF\x1\x12\x1\x14\x1\x13\x7\xFFFF\x1\x19",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\x2\xB\xA\x1C\x3\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\x1\x27\x4\xFFFF\x1\x28\x8\xFFFF\x4\x2B\x4\x2C\x24\xFFFF\x1\x29\x5"+
-				"\xFFFF\x1\x25\x3\xFFFF\x1\x26\x7\xFFFF\x1\x22\x3\xFFFF\x1\x23\x1\xFFFF"+
-				"\x1\x24\x1\x2A",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x2\xA\x2\xFFFF\x1\xA\x12\xFFFF\x1\xD",
+				"\x2\x7\x2\xFFFF\x1\x7\x12\xFFFF\x1\xA\x1\xFFFF\x1\x4\xA\xFFFF\x1\x3"+
+				"\x2\xFFFF\xA\x6\x3\xFFFF\x1\x9\x3\xFFFF\x6\x6\x15\xFFFF\x1\x5\x4\xFFFF"+
+				"\x3\x6\x1\x1\x1\x6\x1\x2",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\x1\x18\x4\xFFFF\x1\x16\x1\xFFFF\x1\x14\x1\x15\x17\xFFFF\x1\x16\xC"+
+				"\xFFFF\x1\x18\x1\x17\x11\xFFFF\x1\x16\x2\xFFFF\x1\x13\x4\xFFFF\x1\xE"+
+				"\x4\xFFFF\x1\xD\x1\x17\x1\x10\x1\xFFFF\x1\xF\x1\x12\x1\x11\x7\xFFFF"+
+				"\x1\x17",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\x1\x22\x4\xFFFF\x1\x23\x8\xFFFF\x4\x26\x4\x27\x24\xFFFF\x1\x24\x5"+
+				"\xFFFF\x1\x20\x3\xFFFF\x1\x21\x7\xFFFF\x1\x1D\x3\xFFFF\x1\x1E\x1\xFFFF"+
+				"\x1\x1F\x1\x25",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\x2\x7\x2\xFFFF\x1\x7\x12\xFFFF\x1\xA",
 				"",
 				"",
 				"",
 				"",
 				"",
-				"\x1\x2E\xD\xFFFF\x1\x1A",
-				"\x1\x2F\x3\xFFFF\x1\x30",
-				"",
+				"\x1\x29\xD\xFFFF\x1\x18",
+				"\x1\x2A\x3\xFFFF\x1\x2B",
 				"",
 				"",
 				"",
@@ -1867,105 +1764,104 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 				"",
 				"",
 				"",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\x2\xB\xA\x1C\x3\xB\x1\xFFFF\xFFC2\xB",
 				"",
-				"\x1\x36\x4\xFFFF\x1\x37\x8\xFFFF\x4\x3A\x4\x3B\x24\xFFFF\x1\x38\x5"+
-				"\xFFFF\x1\x34\x3\xFFFF\x1\x35\x7\xFFFF\x1\x31\x3\xFFFF\x1\x32\x1\xFFFF"+
-				"\x1\x33\x1\x39",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
+				"\x1\x31\x4\xFFFF\x1\x32\x8\xFFFF\x4\x35\x4\x36\x24\xFFFF\x1\x33\x5"+
+				"\xFFFF\x1\x2F\x3\xFFFF\x1\x30\x7\xFFFF\x1\x2C\x3\xFFFF\x1\x2D\x1\xFFFF"+
+				"\x1\x2E\x1\x34",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
 				"",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\xA\x3D\x7\xFFFF\x6\x3D\x1A\xFFFF\x6\x3D\xE\xFFFF\x1\x2A",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\x2\xB\x8\x3E\x5\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\x2\xB\x8\x3F\x5\xB\x1\xFFFF\xFFC2\xB",
-				"",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\xA\x38\x7\xFFFF\x6\x38\x1A\xFFFF\x6\x38\xE\xFFFF\x1\x25",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\x2\x8\x8\x39\x5\x8\x1\xFFFF\xFFC2\x8",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\x2\x8\x8\x3A\x5\x8\x1\xFFFF\xFFC2\x8",
 				"",
 				"",
 				"",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x40\x7\xFFFF\x6\x40\x1A\xFFFF\x6\x40\xE\xFFFF\x1\x39",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\x2\x1F\x8\x41\x5\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\x2\x1F\x8\x42\x5\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
 				"",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x3B\x7\xFFFF\x6\x3B\x1A\xFFFF\x6\x3B\xE\xFFFF\x1\x34",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\x2\x1A\x8\x3C\x5\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\x2\x1A\x8\x3D\x5\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"",
+				"\xA\x3E\x7\xFFFF\x6\x3E\x1A\xFFFF\x6\x3E",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\x2\x8\x8\x3F\x5\x8\x1\xFFFF\xFFC2\x8",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\xA\x40\x7\xFFFF\x6\x40\x1A\xFFFF\x6\x40",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\x2\x1A\x8\x41\x5\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x42\x7\xFFFF\x6\x42\x1A\xFFFF\x6\x42",
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
 				"\xA\x43\x7\xFFFF\x6\x43\x1A\xFFFF\x6\x43",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\x2\xB\x8\x44\x5\xB\x1\xFFFF\xFFC2\xB",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A",
+				"\xA\x44\x7\xFFFF\x6\x44\x1A\xFFFF\x6\x44",
 				"\xA\x45\x7\xFFFF\x6\x45\x1A\xFFFF\x6\x45",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\x2\x1F\x8\x46\x5\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x47\x7\xFFFF\x6\x47\x1A\xFFFF\x6\x47",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\xA\x48\x7\xFFFF\x6\x48\x1A\xFFFF\x6\x48",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F",
-				"\xA\x49\x7\xFFFF\x6\x49\x1A\xFFFF\x6\x49",
-				"\xA\x4A\x7\xFFFF\x6\x4A\x1A\xFFFF\x6\x4A",
-				"\x20\xB\x1\xFFFF\xC\xB\x1\xFFFF\xF\xB\x1\xFFFF\xFFC2\xB",
-				"\xA\x1F\x1\xFFFF\x2\x1F\x1\xFFFF\x12\x1F\x1\x21\x1\x1F\x1\x20\xA\x1F"+
-				"\x1\x21\xF\x1F\x1\x21\x1E\x1F\x1\x1E\xFFA3\x1F"
+				"\x20\x8\x1\xFFFF\xC\x8\x1\xFFFF\xF\x8\x1\xFFFF\xFFC2\x8",
+				"\xA\x1A\x1\xFFFF\x2\x1A\x1\xFFFF\x12\x1A\x1\x1C\x1\x1A\x1\x1B\xA\x1A"+
+				"\x1\x1C\xF\x1A\x1\x1C\x1E\x1A\x1\x19\xFFA3\x1A"
 			};
 
-		private static readonly short[] DFA13_eot = DFA.UnpackEncodedString(DFA13_eotS);
-		private static readonly short[] DFA13_eof = DFA.UnpackEncodedString(DFA13_eofS);
-		private static readonly char[] DFA13_min = DFA.UnpackEncodedStringToUnsignedChars(DFA13_minS);
-		private static readonly char[] DFA13_max = DFA.UnpackEncodedStringToUnsignedChars(DFA13_maxS);
-		private static readonly short[] DFA13_accept = DFA.UnpackEncodedString(DFA13_acceptS);
-		private static readonly short[] DFA13_special = DFA.UnpackEncodedString(DFA13_specialS);
-		private static readonly short[][] DFA13_transition;
+		private static readonly short[] DFA12_eot = DFA.UnpackEncodedString(DFA12_eotS);
+		private static readonly short[] DFA12_eof = DFA.UnpackEncodedString(DFA12_eofS);
+		private static readonly char[] DFA12_min = DFA.UnpackEncodedStringToUnsignedChars(DFA12_minS);
+		private static readonly char[] DFA12_max = DFA.UnpackEncodedStringToUnsignedChars(DFA12_maxS);
+		private static readonly short[] DFA12_accept = DFA.UnpackEncodedString(DFA12_acceptS);
+		private static readonly short[] DFA12_special = DFA.UnpackEncodedString(DFA12_specialS);
+		private static readonly short[][] DFA12_transition;
 
-		static DFA13()
+		static DFA12()
 		{
-			int numStates = DFA13_transitionS.Length;
-			DFA13_transition = new short[numStates][];
+			int numStates = DFA12_transitionS.Length;
+			DFA12_transition = new short[numStates][];
 			for ( int i=0; i < numStates; i++ )
 			{
-				DFA13_transition[i] = DFA.UnpackEncodedString(DFA13_transitionS[i]);
+				DFA12_transition[i] = DFA.UnpackEncodedString(DFA12_transitionS[i]);
 			}
 		}
 
-		public DFA13( BaseRecognizer recognizer, SpecialStateTransitionHandler specialStateTransition )
+		public DFA12( BaseRecognizer recognizer, SpecialStateTransitionHandler specialStateTransition )
 			: base(specialStateTransition)
 		{
 			this.recognizer = recognizer;
-			this.decisionNumber = 13;
-			this.eot = DFA13_eot;
-			this.eof = DFA13_eof;
-			this.min = DFA13_min;
-			this.max = DFA13_max;
-			this.accept = DFA13_accept;
-			this.special = DFA13_special;
-			this.transition = DFA13_transition;
+			this.decisionNumber = 12;
+			this.eot = DFA12_eot;
+			this.eof = DFA12_eof;
+			this.min = DFA12_min;
+			this.max = DFA12_max;
+			this.accept = DFA12_accept;
+			this.special = DFA12_special;
+			this.transition = DFA12_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( T__24 | T__25 | NAME | INAME | REGEX | IREGEX | TYPE | SIZE | DEPTH | LPAREN | RPAREN | AND | OR | NOT | INTEGER | SIZEPOSTFIX | STRING_LITERAL | ESC | HEX_DIGIT | UNQOTED_LITERAL | EQ | WS );"; } }
+		public override string Description { get { return "1:1: Tokens : ( T__23 | T__24 | NAME | INAME | REGEX | IREGEX | PATH | TYPE | SIZE | DEPTH | LPAREN | RPAREN | AND | OR | NOT | STRING_LITERAL | ESC | HEX_DIGIT | UNQOTED_LITERAL | EQ | WS );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -1973,543 +1869,495 @@ public partial class FindLexer : Antlr.Runtime.Lexer
 		}
 	}
 
-	private int SpecialStateTransition13(DFA dfa, int s, IIntStream _input)
+	private int SpecialStateTransition12(DFA dfa, int s, IIntStream _input)
 	{
 		IIntStream input = _input;
 		int _s = s;
 		switch (s)
 		{
 			case 0:
-				int LA13_63 = input.LA(1);
+				int LA12_60 = input.LA(1);
 
 				s = -1;
-				if (((LA13_63>='\u0000' && LA13_63<='\u001F')||(LA13_63>='!' && LA13_63<=',')||(LA13_63>='.' && LA13_63<='<')||(LA13_63>='>' && LA13_63<='\uFFFF'))) {s = 11;}
+				if (((LA12_60>='0' && LA12_60<='7'))) {s = 65;}
 
-				else s = 60;
+				else if ((LA12_60=='\"')) {s = 27;}
+
+				else if ((LA12_60=='\\')) {s = 25;}
+
+				else if (((LA12_60>='\u0000' && LA12_60<='\t')||(LA12_60>='\u000B' && LA12_60<='\f')||(LA12_60>='\u000E' && LA12_60<='\u001F')||LA12_60=='!'||(LA12_60>='#' && LA12_60<=',')||(LA12_60>='.' && LA12_60<='/')||(LA12_60>='8' && LA12_60<='<')||(LA12_60>='>' && LA12_60<='[')||(LA12_60>=']' && LA12_60<='\uFFFF'))) {s = 26;}
+
+				else if ((LA12_60==' '||LA12_60=='-'||LA12_60=='=')) {s = 28;}
+
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 1:
-				int LA13_49 = input.LA(1);
+				int LA12_38 = input.LA(1);
 
 				s = -1;
-				if ((LA13_49=='\"')) {s = 32;}
+				if (((LA12_38>='0' && LA12_38<='7'))) {s = 57;}
 
-				else if ((LA13_49=='\\')) {s = 30;}
+				else if (((LA12_38>='\u0000' && LA12_38<='\u001F')||(LA12_38>='!' && LA12_38<=',')||(LA12_38>='.' && LA12_38<='/')||(LA12_38>='8' && LA12_38<='<')||(LA12_38>='>' && LA12_38<='\uFFFF'))) {s = 8;}
 
-				else if (((LA13_49>='\u0000' && LA13_49<='\t')||(LA13_49>='\u000B' && LA13_49<='\f')||(LA13_49>='\u000E' && LA13_49<='\u001F')||LA13_49=='!'||(LA13_49>='#' && LA13_49<=',')||(LA13_49>='.' && LA13_49<='<')||(LA13_49>='>' && LA13_49<='[')||(LA13_49>=']' && LA13_49<='\uFFFF'))) {s = 31;}
-
-				else if ((LA13_49==' '||LA13_49=='-'||LA13_49=='=')) {s = 33;}
-
-				else s = 11;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 2:
-				int LA13_50 = input.LA(1);
+				int LA12_69 = input.LA(1);
 
 				s = -1;
-				if ((LA13_50=='\"')) {s = 32;}
+				if ((LA12_69=='\"')) {s = 27;}
 
-				else if ((LA13_50=='\\')) {s = 30;}
+				else if ((LA12_69=='\\')) {s = 25;}
 
-				else if (((LA13_50>='\u0000' && LA13_50<='\t')||(LA13_50>='\u000B' && LA13_50<='\f')||(LA13_50>='\u000E' && LA13_50<='\u001F')||LA13_50=='!'||(LA13_50>='#' && LA13_50<=',')||(LA13_50>='.' && LA13_50<='<')||(LA13_50>='>' && LA13_50<='[')||(LA13_50>=']' && LA13_50<='\uFFFF'))) {s = 31;}
+				else if (((LA12_69>='\u0000' && LA12_69<='\t')||(LA12_69>='\u000B' && LA12_69<='\f')||(LA12_69>='\u000E' && LA12_69<='\u001F')||LA12_69=='!'||(LA12_69>='#' && LA12_69<=',')||(LA12_69>='.' && LA12_69<='<')||(LA12_69>='>' && LA12_69<='[')||(LA12_69>=']' && LA12_69<='\uFFFF'))) {s = 26;}
 
-				else if ((LA13_50==' '||LA13_50=='-'||LA13_50=='=')) {s = 33;}
+				else if ((LA12_69==' '||LA12_69=='-'||LA12_69=='=')) {s = 28;}
 
-				else s = 11;
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 3:
-				int LA13_51 = input.LA(1);
+				int LA12_27 = input.LA(1);
 
 				s = -1;
-				if ((LA13_51=='\"')) {s = 32;}
+				if (((LA12_27>='\u0000' && LA12_27<='\u001F')||(LA12_27>='!' && LA12_27<=',')||(LA12_27>='.' && LA12_27<='<')||(LA12_27>='>' && LA12_27<='\uFFFF'))) {s = 8;}
 
-				else if ((LA13_51=='\\')) {s = 30;}
-
-				else if (((LA13_51>='\u0000' && LA13_51<='\t')||(LA13_51>='\u000B' && LA13_51<='\f')||(LA13_51>='\u000E' && LA13_51<='\u001F')||LA13_51=='!'||(LA13_51>='#' && LA13_51<=',')||(LA13_51>='.' && LA13_51<='<')||(LA13_51>='>' && LA13_51<='[')||(LA13_51>=']' && LA13_51<='\uFFFF'))) {s = 31;}
-
-				else if ((LA13_51==' '||LA13_51=='-'||LA13_51=='=')) {s = 33;}
-
-				else s = 11;
+				else s = 28;
 
 				if (s >= 0) return s;
 				break;
 
 			case 4:
-				int LA13_52 = input.LA(1);
+				int LA12_58 = input.LA(1);
 
 				s = -1;
-				if ((LA13_52=='\"')) {s = 32;}
+				if (((LA12_58>='\u0000' && LA12_58<='\u001F')||(LA12_58>='!' && LA12_58<=',')||(LA12_58>='.' && LA12_58<='<')||(LA12_58>='>' && LA12_58<='\uFFFF'))) {s = 8;}
 
-				else if ((LA13_52=='\\')) {s = 30;}
-
-				else if (((LA13_52>='\u0000' && LA13_52<='\t')||(LA13_52>='\u000B' && LA13_52<='\f')||(LA13_52>='\u000E' && LA13_52<='\u001F')||LA13_52=='!'||(LA13_52>='#' && LA13_52<=',')||(LA13_52>='.' && LA13_52<='<')||(LA13_52>='>' && LA13_52<='[')||(LA13_52>=']' && LA13_52<='\uFFFF'))) {s = 31;}
-
-				else if ((LA13_52==' '||LA13_52=='-'||LA13_52=='=')) {s = 33;}
-
-				else s = 11;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 5:
-				int LA13_74 = input.LA(1);
+				int LA12_48 = input.LA(1);
 
 				s = -1;
-				if ((LA13_74=='\"')) {s = 32;}
+				if ((LA12_48=='\"')) {s = 27;}
 
-				else if ((LA13_74=='\\')) {s = 30;}
+				else if ((LA12_48=='\\')) {s = 25;}
 
-				else if (((LA13_74>='\u0000' && LA13_74<='\t')||(LA13_74>='\u000B' && LA13_74<='\f')||(LA13_74>='\u000E' && LA13_74<='\u001F')||LA13_74=='!'||(LA13_74>='#' && LA13_74<=',')||(LA13_74>='.' && LA13_74<='<')||(LA13_74>='>' && LA13_74<='[')||(LA13_74>=']' && LA13_74<='\uFFFF'))) {s = 31;}
+				else if (((LA12_48>='\u0000' && LA12_48<='\t')||(LA12_48>='\u000B' && LA12_48<='\f')||(LA12_48>='\u000E' && LA12_48<='\u001F')||LA12_48=='!'||(LA12_48>='#' && LA12_48<=',')||(LA12_48>='.' && LA12_48<='<')||(LA12_48>='>' && LA12_48<='[')||(LA12_48>=']' && LA12_48<='\uFFFF'))) {s = 26;}
 
-				else if ((LA13_74==' '||LA13_74=='-'||LA13_74=='=')) {s = 33;}
+				else if ((LA12_48==' '||LA12_48=='-'||LA12_48=='=')) {s = 28;}
 
-				else s = 11;
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 6:
-				int LA13_4 = input.LA(1);
+				int LA12_47 = input.LA(1);
 
 				s = -1;
-				if (((LA13_4>='0' && LA13_4<='9'))) {s = 28;}
+				if ((LA12_47=='\"')) {s = 27;}
 
-				else if (((LA13_4>='\u0000' && LA13_4<='\u001F')||(LA13_4>='!' && LA13_4<=',')||(LA13_4>='.' && LA13_4<='/')||(LA13_4>=':' && LA13_4<='<')||(LA13_4>='>' && LA13_4<='\uFFFF'))) {s = 11;}
+				else if ((LA12_47=='\\')) {s = 25;}
 
-				else s = 27;
+				else if (((LA12_47>='\u0000' && LA12_47<='\t')||(LA12_47>='\u000B' && LA12_47<='\f')||(LA12_47>='\u000E' && LA12_47<='\u001F')||LA12_47=='!'||(LA12_47>='#' && LA12_47<=',')||(LA12_47>='.' && LA12_47<='<')||(LA12_47>='>' && LA12_47<='[')||(LA12_47>=']' && LA12_47<='\uFFFF'))) {s = 26;}
+
+				else if ((LA12_47==' '||LA12_47=='-'||LA12_47=='=')) {s = 28;}
+
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 7:
-				int LA13_59 = input.LA(1);
+				int LA12_4 = input.LA(1);
 
 				s = -1;
-				if (((LA13_59>='0' && LA13_59<='7'))) {s = 66;}
+				if ((LA12_4=='\\')) {s = 25;}
 
-				else if ((LA13_59=='\"')) {s = 32;}
+				else if (((LA12_4>='\u0000' && LA12_4<='\t')||(LA12_4>='\u000B' && LA12_4<='\f')||(LA12_4>='\u000E' && LA12_4<='\u001F')||LA12_4=='!'||(LA12_4>='#' && LA12_4<=',')||(LA12_4>='.' && LA12_4<='<')||(LA12_4>='>' && LA12_4<='[')||(LA12_4>=']' && LA12_4<='\uFFFF'))) {s = 26;}
 
-				else if ((LA13_59=='\\')) {s = 30;}
+				else if ((LA12_4=='\"')) {s = 27;}
 
-				else if (((LA13_59>='\u0000' && LA13_59<='\t')||(LA13_59>='\u000B' && LA13_59<='\f')||(LA13_59>='\u000E' && LA13_59<='\u001F')||LA13_59=='!'||(LA13_59>='#' && LA13_59<=',')||(LA13_59>='.' && LA13_59<='/')||(LA13_59>='8' && LA13_59<='<')||(LA13_59>='>' && LA13_59<='[')||(LA13_59>=']' && LA13_59<='\uFFFF'))) {s = 31;}
+				else if ((LA12_4==' '||LA12_4=='-'||LA12_4=='=')) {s = 28;}
 
-				else if ((LA13_59==' '||LA13_59=='-'||LA13_59=='=')) {s = 33;}
-
-				else s = 11;
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 8:
-				int LA13_6 = input.LA(1);
+				int LA12_50 = input.LA(1);
 
 				s = -1;
-				if ((LA13_6=='\\')) {s = 30;}
+				if ((LA12_50=='\"')) {s = 27;}
 
-				else if (((LA13_6>='\u0000' && LA13_6<='\t')||(LA13_6>='\u000B' && LA13_6<='\f')||(LA13_6>='\u000E' && LA13_6<='\u001F')||LA13_6=='!'||(LA13_6>='#' && LA13_6<=',')||(LA13_6>='.' && LA13_6<='<')||(LA13_6>='>' && LA13_6<='[')||(LA13_6>=']' && LA13_6<='\uFFFF'))) {s = 31;}
+				else if ((LA12_50=='\\')) {s = 25;}
 
-				else if ((LA13_6=='\"')) {s = 32;}
+				else if (((LA12_50>='\u0000' && LA12_50<='\t')||(LA12_50>='\u000B' && LA12_50<='\f')||(LA12_50>='\u000E' && LA12_50<='\u001F')||LA12_50=='!'||(LA12_50>='#' && LA12_50<=',')||(LA12_50>='.' && LA12_50<='<')||(LA12_50>='>' && LA12_50<='[')||(LA12_50>=']' && LA12_50<='\uFFFF'))) {s = 26;}
 
-				else if ((LA13_6==' '||LA13_6=='-'||LA13_6=='=')) {s = 33;}
+				else if ((LA12_50==' '||LA12_50=='-'||LA12_50=='=')) {s = 28;}
 
-				else s = 11;
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 9:
-				int LA13_62 = input.LA(1);
+				int LA12_61 = input.LA(1);
 
 				s = -1;
-				if (((LA13_62>='0' && LA13_62<='7'))) {s = 68;}
+				if ((LA12_61=='\"')) {s = 27;}
 
-				else if (((LA13_62>='\u0000' && LA13_62<='\u001F')||(LA13_62>='!' && LA13_62<=',')||(LA13_62>='.' && LA13_62<='/')||(LA13_62>='8' && LA13_62<='<')||(LA13_62>='>' && LA13_62<='\uFFFF'))) {s = 11;}
+				else if ((LA12_61=='\\')) {s = 25;}
 
-				else s = 60;
+				else if (((LA12_61>='\u0000' && LA12_61<='\t')||(LA12_61>='\u000B' && LA12_61<='\f')||(LA12_61>='\u000E' && LA12_61<='\u001F')||LA12_61=='!'||(LA12_61>='#' && LA12_61<=',')||(LA12_61>='.' && LA12_61<='<')||(LA12_61>='>' && LA12_61<='[')||(LA12_61>=']' && LA12_61<='\uFFFF'))) {s = 26;}
+
+				else if ((LA12_61==' '||LA12_61=='-'||LA12_61=='=')) {s = 28;}
+
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 10:
-				int LA13_28 = input.LA(1);
+				int LA12_49 = input.LA(1);
 
 				s = -1;
-				if (((LA13_28>='0' && LA13_28<='9'))) {s = 28;}
+				if ((LA12_49=='\"')) {s = 27;}
 
-				else if (((LA13_28>='\u0000' && LA13_28<='\u001F')||(LA13_28>='!' && LA13_28<=',')||(LA13_28>='.' && LA13_28<='/')||(LA13_28>=':' && LA13_28<='<')||(LA13_28>='>' && LA13_28<='\uFFFF'))) {s = 11;}
+				else if ((LA12_49=='\\')) {s = 25;}
 
-				else s = 27;
+				else if (((LA12_49>='\u0000' && LA12_49<='\t')||(LA12_49>='\u000B' && LA12_49<='\f')||(LA12_49>='\u000E' && LA12_49<='\u001F')||LA12_49=='!'||(LA12_49>='#' && LA12_49<=',')||(LA12_49>='.' && LA12_49<='<')||(LA12_49>='>' && LA12_49<='[')||(LA12_49>=']' && LA12_49<='\uFFFF'))) {s = 26;}
+
+				else if ((LA12_49==' '||LA12_49=='-'||LA12_49=='=')) {s = 28;}
+
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 11:
-				int LA13_66 = input.LA(1);
+				int LA12_36 = input.LA(1);
 
 				s = -1;
-				if ((LA13_66=='\"')) {s = 32;}
+				if (((LA12_36>='\u0000' && LA12_36<='\u001F')||(LA12_36>='!' && LA12_36<=',')||(LA12_36>='.' && LA12_36<='<')||(LA12_36>='>' && LA12_36<='\uFFFF'))) {s = 8;}
 
-				else if ((LA13_66=='\\')) {s = 30;}
-
-				else if (((LA13_66>='\u0000' && LA13_66<='\t')||(LA13_66>='\u000B' && LA13_66<='\f')||(LA13_66>='\u000E' && LA13_66<='\u001F')||LA13_66=='!'||(LA13_66>='#' && LA13_66<=',')||(LA13_66>='.' && LA13_66<='<')||(LA13_66>='>' && LA13_66<='[')||(LA13_66>=']' && LA13_66<='\uFFFF'))) {s = 31;}
-
-				else if ((LA13_66==' '||LA13_66=='-'||LA13_66=='=')) {s = 33;}
-
-				else s = 11;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 12:
-				int LA13_65 = input.LA(1);
+				int LA12_44 = input.LA(1);
 
 				s = -1;
-				if (((LA13_65>='0' && LA13_65<='7'))) {s = 70;}
+				if ((LA12_44=='\"')) {s = 27;}
 
-				else if ((LA13_65=='\"')) {s = 32;}
+				else if ((LA12_44=='\\')) {s = 25;}
 
-				else if ((LA13_65=='\\')) {s = 30;}
+				else if (((LA12_44>='\u0000' && LA12_44<='\t')||(LA12_44>='\u000B' && LA12_44<='\f')||(LA12_44>='\u000E' && LA12_44<='\u001F')||LA12_44=='!'||(LA12_44>='#' && LA12_44<=',')||(LA12_44>='.' && LA12_44<='<')||(LA12_44>='>' && LA12_44<='[')||(LA12_44>=']' && LA12_44<='\uFFFF'))) {s = 26;}
 
-				else if (((LA13_65>='\u0000' && LA13_65<='\t')||(LA13_65>='\u000B' && LA13_65<='\f')||(LA13_65>='\u000E' && LA13_65<='\u001F')||LA13_65=='!'||(LA13_65>='#' && LA13_65<=',')||(LA13_65>='.' && LA13_65<='/')||(LA13_65>='8' && LA13_65<='<')||(LA13_65>='>' && LA13_65<='[')||(LA13_65>=']' && LA13_65<='\uFFFF'))) {s = 31;}
+				else if ((LA12_44==' '||LA12_44=='-'||LA12_44=='=')) {s = 28;}
 
-				else if ((LA13_65==' '||LA13_65=='-'||LA13_65=='=')) {s = 33;}
-
-				else s = 11;
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 13:
-				int LA13_73 = input.LA(1);
+				int LA12_34 = input.LA(1);
 
 				s = -1;
-				if (((LA13_73>='\u0000' && LA13_73<='\u001F')||(LA13_73>='!' && LA13_73<=',')||(LA13_73>='.' && LA13_73<='<')||(LA13_73>='>' && LA13_73<='\uFFFF'))) {s = 11;}
+				if (((LA12_34>='\u0000' && LA12_34<='\u001F')||(LA12_34>='!' && LA12_34<=',')||(LA12_34>='.' && LA12_34<='<')||(LA12_34>='>' && LA12_34<='\uFFFF'))) {s = 8;}
 
-				else s = 60;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 14:
-				int LA13_43 = input.LA(1);
+				int LA12_46 = input.LA(1);
 
 				s = -1;
-				if (((LA13_43>='0' && LA13_43<='7'))) {s = 62;}
+				if ((LA12_46=='\"')) {s = 27;}
 
-				else if (((LA13_43>='\u0000' && LA13_43<='\u001F')||(LA13_43>='!' && LA13_43<=',')||(LA13_43>='.' && LA13_43<='/')||(LA13_43>='8' && LA13_43<='<')||(LA13_43>='>' && LA13_43<='\uFFFF'))) {s = 11;}
+				else if ((LA12_46=='\\')) {s = 25;}
 
-				else s = 60;
+				else if (((LA12_46>='\u0000' && LA12_46<='\t')||(LA12_46>='\u000B' && LA12_46<='\f')||(LA12_46>='\u000E' && LA12_46<='\u001F')||LA12_46=='!'||(LA12_46>='#' && LA12_46<=',')||(LA12_46>='.' && LA12_46<='<')||(LA12_46>='>' && LA12_46<='[')||(LA12_46>=']' && LA12_46<='\uFFFF'))) {s = 26;}
+
+				else if ((LA12_46==' '||LA12_46=='-'||LA12_46=='=')) {s = 28;}
+
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 15:
-				int LA13_34 = input.LA(1);
+				int LA12_35 = input.LA(1);
 
 				s = -1;
-				if (((LA13_34>='\u0000' && LA13_34<='\u001F')||(LA13_34>='!' && LA13_34<=',')||(LA13_34>='.' && LA13_34<='<')||(LA13_34>='>' && LA13_34<='\uFFFF'))) {s = 11;}
+				if (((LA12_35>='\u0000' && LA12_35<='\u001F')||(LA12_35>='!' && LA12_35<=',')||(LA12_35>='.' && LA12_35<='<')||(LA12_35>='>' && LA12_35<='\uFFFF'))) {s = 8;}
 
-				else s = 60;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 16:
-				int LA13_58 = input.LA(1);
+				int LA12_45 = input.LA(1);
 
 				s = -1;
-				if (((LA13_58>='0' && LA13_58<='7'))) {s = 65;}
+				if ((LA12_45=='\"')) {s = 27;}
 
-				else if ((LA13_58=='\"')) {s = 32;}
+				else if ((LA12_45=='\\')) {s = 25;}
 
-				else if ((LA13_58=='\\')) {s = 30;}
+				else if (((LA12_45>='\u0000' && LA12_45<='\t')||(LA12_45>='\u000B' && LA12_45<='\f')||(LA12_45>='\u000E' && LA12_45<='\u001F')||LA12_45=='!'||(LA12_45>='#' && LA12_45<=',')||(LA12_45>='.' && LA12_45<='<')||(LA12_45>='>' && LA12_45<='[')||(LA12_45>=']' && LA12_45<='\uFFFF'))) {s = 26;}
 
-				else if (((LA13_58>='\u0000' && LA13_58<='\t')||(LA13_58>='\u000B' && LA13_58<='\f')||(LA13_58>='\u000E' && LA13_58<='\u001F')||LA13_58=='!'||(LA13_58>='#' && LA13_58<=',')||(LA13_58>='.' && LA13_58<='/')||(LA13_58>='8' && LA13_58<='<')||(LA13_58>='>' && LA13_58<='[')||(LA13_58>=']' && LA13_58<='\uFFFF'))) {s = 31;}
+				else if ((LA12_45==' '||LA12_45=='-'||LA12_45=='=')) {s = 28;}
 
-				else if ((LA13_58==' '||LA13_58=='-'||LA13_58=='=')) {s = 33;}
-
-				else s = 11;
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 17:
-				int LA13_35 = input.LA(1);
+				int LA12_54 = input.LA(1);
 
 				s = -1;
-				if (((LA13_35>='\u0000' && LA13_35<='\u001F')||(LA13_35>='!' && LA13_35<=',')||(LA13_35>='.' && LA13_35<='<')||(LA13_35>='>' && LA13_35<='\uFFFF'))) {s = 11;}
+				if (((LA12_54>='0' && LA12_54<='7'))) {s = 61;}
 
-				else s = 60;
+				else if ((LA12_54=='\"')) {s = 27;}
+
+				else if ((LA12_54=='\\')) {s = 25;}
+
+				else if (((LA12_54>='\u0000' && LA12_54<='\t')||(LA12_54>='\u000B' && LA12_54<='\f')||(LA12_54>='\u000E' && LA12_54<='\u001F')||LA12_54=='!'||(LA12_54>='#' && LA12_54<=',')||(LA12_54>='.' && LA12_54<='/')||(LA12_54>='8' && LA12_54<='<')||(LA12_54>='>' && LA12_54<='[')||(LA12_54>=']' && LA12_54<='\uFFFF'))) {s = 26;}
+
+				else if ((LA12_54==' '||LA12_54=='-'||LA12_54=='=')) {s = 28;}
+
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 18:
-				int LA13_8 = input.LA(1);
+				int LA12_57 = input.LA(1);
 
 				s = -1;
-				if (((LA13_8>='\u0000' && LA13_8<='\u001F')||(LA13_8>='!' && LA13_8<=',')||(LA13_8>='.' && LA13_8<='<')||(LA13_8>='>' && LA13_8<='\uFFFF'))) {s = 11;}
+				if (((LA12_57>='0' && LA12_57<='7'))) {s = 63;}
 
-				else s = 29;
+				else if (((LA12_57>='\u0000' && LA12_57<='\u001F')||(LA12_57>='!' && LA12_57<=',')||(LA12_57>='.' && LA12_57<='/')||(LA12_57>='8' && LA12_57<='<')||(LA12_57>='>' && LA12_57<='\uFFFF'))) {s = 8;}
+
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 19:
-				int LA13_36 = input.LA(1);
+				int LA12_6 = input.LA(1);
 
 				s = -1;
-				if (((LA13_36>='\u0000' && LA13_36<='\u001F')||(LA13_36>='!' && LA13_36<=',')||(LA13_36>='.' && LA13_36<='<')||(LA13_36>='>' && LA13_36<='\uFFFF'))) {s = 11;}
+				if (((LA12_6>='\u0000' && LA12_6<='\u001F')||(LA12_6>='!' && LA12_6<=',')||(LA12_6>='.' && LA12_6<='<')||(LA12_6>='>' && LA12_6<='\uFFFF'))) {s = 8;}
 
-				else s = 60;
+				else s = 40;
 
 				if (s >= 0) return s;
 				break;
 
 			case 20:
-				int LA13_37 = input.LA(1);
+				int LA12_63 = input.LA(1);
 
 				s = -1;
-				if (((LA13_37>='\u0000' && LA13_37<='\u001F')||(LA13_37>='!' && LA13_37<=',')||(LA13_37>='.' && LA13_37<='<')||(LA13_37>='>' && LA13_37<='\uFFFF'))) {s = 11;}
+				if (((LA12_63>='\u0000' && LA12_63<='\u001F')||(LA12_63>='!' && LA12_63<=',')||(LA12_63>='.' && LA12_63<='<')||(LA12_63>='>' && LA12_63<='\uFFFF'))) {s = 8;}
 
-				else s = 60;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 21:
-				int LA13_38 = input.LA(1);
+				int LA12_2 = input.LA(1);
 
 				s = -1;
-				if (((LA13_38>='\u0000' && LA13_38<='\u001F')||(LA13_38>='!' && LA13_38<=',')||(LA13_38>='.' && LA13_38<='<')||(LA13_38>='>' && LA13_38<='\uFFFF'))) {s = 11;}
+				if (((LA12_2>='\u0000' && LA12_2<='\u001F')||(LA12_2>='!' && LA12_2<=',')||(LA12_2>='.' && LA12_2<='<')||(LA12_2>='>' && LA12_2<='\uFFFF'))) {s = 8;}
 
-				else s = 60;
+				else s = 12;
 
 				if (s >= 0) return s;
 				break;
 
 			case 22:
-				int LA13_39 = input.LA(1);
+				int LA12_26 = input.LA(1);
 
 				s = -1;
-				if (((LA13_39>='\u0000' && LA13_39<='\u001F')||(LA13_39>='!' && LA13_39<=',')||(LA13_39>='.' && LA13_39<='<')||(LA13_39>='>' && LA13_39<='\uFFFF'))) {s = 11;}
+				if ((LA12_26=='\"')) {s = 27;}
 
-				else s = 60;
+				else if ((LA12_26=='\\')) {s = 25;}
+
+				else if (((LA12_26>='\u0000' && LA12_26<='\t')||(LA12_26>='\u000B' && LA12_26<='\f')||(LA12_26>='\u000E' && LA12_26<='\u001F')||LA12_26=='!'||(LA12_26>='#' && LA12_26<=',')||(LA12_26>='.' && LA12_26<='<')||(LA12_26>='>' && LA12_26<='[')||(LA12_26>=']' && LA12_26<='\uFFFF'))) {s = 26;}
+
+				else if ((LA12_26==' '||LA12_26=='-'||LA12_26=='=')) {s = 28;}
+
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 23:
-				int LA13_40 = input.LA(1);
+				int LA12_1 = input.LA(1);
 
 				s = -1;
-				if (((LA13_40>='\u0000' && LA13_40<='\u001F')||(LA13_40>='!' && LA13_40<=',')||(LA13_40>='.' && LA13_40<='<')||(LA13_40>='>' && LA13_40<='\uFFFF'))) {s = 11;}
+				if (((LA12_1>='\u0000' && LA12_1<='\u001F')||(LA12_1>='!' && LA12_1<=',')||(LA12_1>='.' && LA12_1<='<')||(LA12_1>='>' && LA12_1<='\uFFFF'))) {s = 8;}
 
-				else s = 60;
+				else s = 11;
 
 				if (s >= 0) return s;
 				break;
 
 			case 24:
-				int LA13_41 = input.LA(1);
+				int LA12_68 = input.LA(1);
 
 				s = -1;
-				if (((LA13_41>='\u0000' && LA13_41<='\u001F')||(LA13_41>='!' && LA13_41<=',')||(LA13_41>='.' && LA13_41<='<')||(LA13_41>='>' && LA13_41<='\uFFFF'))) {s = 11;}
+				if (((LA12_68>='\u0000' && LA12_68<='\u001F')||(LA12_68>='!' && LA12_68<=',')||(LA12_68>='.' && LA12_68<='<')||(LA12_68>='>' && LA12_68<='\uFFFF'))) {s = 8;}
 
-				else s = 60;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 25:
-				int LA13_2 = input.LA(1);
+				int LA12_31 = input.LA(1);
 
 				s = -1;
-				if (((LA13_2>='\u0000' && LA13_2<='\u001F')||(LA13_2>='!' && LA13_2<=',')||(LA13_2>='.' && LA13_2<='<')||(LA13_2>='>' && LA13_2<='\uFFFF'))) {s = 11;}
+				if (((LA12_31>='\u0000' && LA12_31<='\u001F')||(LA12_31>='!' && LA12_31<=',')||(LA12_31>='.' && LA12_31<='<')||(LA12_31>='>' && LA12_31<='\uFFFF'))) {s = 8;}
 
-				else s = 15;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 26:
-				int LA13_31 = input.LA(1);
+				int LA12_30 = input.LA(1);
 
 				s = -1;
-				if ((LA13_31=='\"')) {s = 32;}
+				if (((LA12_30>='\u0000' && LA12_30<='\u001F')||(LA12_30>='!' && LA12_30<=',')||(LA12_30>='.' && LA12_30<='<')||(LA12_30>='>' && LA12_30<='\uFFFF'))) {s = 8;}
 
-				else if ((LA13_31=='\\')) {s = 30;}
-
-				else if (((LA13_31>='\u0000' && LA13_31<='\t')||(LA13_31>='\u000B' && LA13_31<='\f')||(LA13_31>='\u000E' && LA13_31<='\u001F')||LA13_31=='!'||(LA13_31>='#' && LA13_31<=',')||(LA13_31>='.' && LA13_31<='<')||(LA13_31>='>' && LA13_31<='[')||(LA13_31>=']' && LA13_31<='\uFFFF'))) {s = 31;}
-
-				else if ((LA13_31==' '||LA13_31=='-'||LA13_31=='=')) {s = 33;}
-
-				else s = 11;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 27:
-				int LA13_68 = input.LA(1);
+				int LA12_33 = input.LA(1);
 
 				s = -1;
-				if (((LA13_68>='\u0000' && LA13_68<='\u001F')||(LA13_68>='!' && LA13_68<=',')||(LA13_68>='.' && LA13_68<='<')||(LA13_68>='>' && LA13_68<='\uFFFF'))) {s = 11;}
+				if (((LA12_33>='\u0000' && LA12_33<='\u001F')||(LA12_33>='!' && LA12_33<=',')||(LA12_33>='.' && LA12_33<='<')||(LA12_33>='>' && LA12_33<='\uFFFF'))) {s = 8;}
 
-				else s = 60;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 28:
-				int LA13_32 = input.LA(1);
+				int LA12_32 = input.LA(1);
 
 				s = -1;
-				if (((LA13_32>='\u0000' && LA13_32<='\u001F')||(LA13_32>='!' && LA13_32<=',')||(LA13_32>='.' && LA13_32<='<')||(LA13_32>='>' && LA13_32<='\uFFFF'))) {s = 11;}
+				if (((LA12_32>='\u0000' && LA12_32<='\u001F')||(LA12_32>='!' && LA12_32<=',')||(LA12_32>='.' && LA12_32<='<')||(LA12_32>='>' && LA12_32<='\uFFFF'))) {s = 8;}
 
-				else s = 33;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 29:
-				int LA13_1 = input.LA(1);
+				int LA12_39 = input.LA(1);
 
 				s = -1;
-				if (((LA13_1>='\u0000' && LA13_1<='\u001F')||(LA13_1>='!' && LA13_1<=',')||(LA13_1>='.' && LA13_1<='<')||(LA13_1>='>' && LA13_1<='\uFFFF'))) {s = 11;}
+				if (((LA12_39>='0' && LA12_39<='7'))) {s = 58;}
 
-				else s = 14;
+				else if (((LA12_39>='\u0000' && LA12_39<='\u001F')||(LA12_39>='!' && LA12_39<=',')||(LA12_39>='.' && LA12_39<='/')||(LA12_39>='8' && LA12_39<='<')||(LA12_39>='>' && LA12_39<='\uFFFF'))) {s = 8;}
+
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 30:
-				int LA13_44 = input.LA(1);
+				int LA12_65 = input.LA(1);
 
 				s = -1;
-				if (((LA13_44>='0' && LA13_44<='7'))) {s = 63;}
+				if ((LA12_65=='\"')) {s = 27;}
 
-				else if (((LA13_44>='\u0000' && LA13_44<='\u001F')||(LA13_44>='!' && LA13_44<=',')||(LA13_44>='.' && LA13_44<='/')||(LA13_44>='8' && LA13_44<='<')||(LA13_44>='>' && LA13_44<='\uFFFF'))) {s = 11;}
+				else if ((LA12_65=='\\')) {s = 25;}
 
-				else s = 60;
+				else if (((LA12_65>='\u0000' && LA12_65<='\t')||(LA12_65>='\u000B' && LA12_65<='\f')||(LA12_65>='\u000E' && LA12_65<='\u001F')||LA12_65=='!'||(LA12_65>='#' && LA12_65<=',')||(LA12_65>='.' && LA12_65<='<')||(LA12_65>='>' && LA12_65<='[')||(LA12_65>=']' && LA12_65<='\uFFFF'))) {s = 26;}
+
+				else if ((LA12_65==' '||LA12_65=='-'||LA12_65=='=')) {s = 28;}
+
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 31:
-				int LA13_56 = input.LA(1);
+				int LA12_51 = input.LA(1);
 
 				s = -1;
-				if ((LA13_56=='\"')) {s = 32;}
+				if ((LA12_51=='\"')) {s = 27;}
 
-				else if ((LA13_56=='\\')) {s = 30;}
+				else if ((LA12_51=='\\')) {s = 25;}
 
-				else if (((LA13_56>='\u0000' && LA13_56<='\t')||(LA13_56>='\u000B' && LA13_56<='\f')||(LA13_56>='\u000E' && LA13_56<='\u001F')||LA13_56=='!'||(LA13_56>='#' && LA13_56<=',')||(LA13_56>='.' && LA13_56<='<')||(LA13_56>='>' && LA13_56<='[')||(LA13_56>=']' && LA13_56<='\uFFFF'))) {s = 31;}
+				else if (((LA12_51>='\u0000' && LA12_51<='\t')||(LA12_51>='\u000B' && LA12_51<='\f')||(LA12_51>='\u000E' && LA12_51<='\u001F')||LA12_51=='!'||(LA12_51>='#' && LA12_51<=',')||(LA12_51>='.' && LA12_51<='<')||(LA12_51>='>' && LA12_51<='[')||(LA12_51>=']' && LA12_51<='\uFFFF'))) {s = 26;}
 
-				else if ((LA13_56==' '||LA13_56=='-'||LA13_56=='=')) {s = 33;}
+				else if ((LA12_51==' '||LA12_51=='-'||LA12_51=='=')) {s = 28;}
 
-				else s = 11;
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 
 			case 32:
-				int LA13_55 = input.LA(1);
+				int LA12_29 = input.LA(1);
 
 				s = -1;
-				if ((LA13_55=='\"')) {s = 32;}
+				if (((LA12_29>='\u0000' && LA12_29<='\u001F')||(LA12_29>='!' && LA12_29<=',')||(LA12_29>='.' && LA12_29<='<')||(LA12_29>='>' && LA12_29<='\uFFFF'))) {s = 8;}
 
-				else if ((LA13_55=='\\')) {s = 30;}
-
-				else if (((LA13_55>='\u0000' && LA13_55<='\t')||(LA13_55>='\u000B' && LA13_55<='\f')||(LA13_55>='\u000E' && LA13_55<='\u001F')||LA13_55=='!'||(LA13_55>='#' && LA13_55<=',')||(LA13_55>='.' && LA13_55<='<')||(LA13_55>='>' && LA13_55<='[')||(LA13_55>=']' && LA13_55<='\uFFFF'))) {s = 31;}
-
-				else if ((LA13_55==' '||LA13_55=='-'||LA13_55=='=')) {s = 33;}
-
-				else s = 11;
+				else s = 55;
 
 				if (s >= 0) return s;
 				break;
 
 			case 33:
-				int LA13_54 = input.LA(1);
+				int LA12_53 = input.LA(1);
 
 				s = -1;
-				if ((LA13_54=='\"')) {s = 32;}
+				if (((LA12_53>='0' && LA12_53<='7'))) {s = 60;}
 
-				else if ((LA13_54=='\\')) {s = 30;}
+				else if ((LA12_53=='\"')) {s = 27;}
 
-				else if (((LA13_54>='\u0000' && LA13_54<='\t')||(LA13_54>='\u000B' && LA13_54<='\f')||(LA13_54>='\u000E' && LA13_54<='\u001F')||LA13_54=='!'||(LA13_54>='#' && LA13_54<=',')||(LA13_54>='.' && LA13_54<='<')||(LA13_54>='>' && LA13_54<='[')||(LA13_54>=']' && LA13_54<='\uFFFF'))) {s = 31;}
+				else if ((LA12_53=='\\')) {s = 25;}
 
-				else if ((LA13_54==' '||LA13_54=='-'||LA13_54=='=')) {s = 33;}
+				else if (((LA12_53>='\u0000' && LA12_53<='\t')||(LA12_53>='\u000B' && LA12_53<='\f')||(LA12_53>='\u000E' && LA12_53<='\u001F')||LA12_53=='!'||(LA12_53>='#' && LA12_53<=',')||(LA12_53>='.' && LA12_53<='/')||(LA12_53>='8' && LA12_53<='<')||(LA12_53>='>' && LA12_53<='[')||(LA12_53>=']' && LA12_53<='\uFFFF'))) {s = 26;}
 
-				else s = 11;
+				else if ((LA12_53==' '||LA12_53=='-'||LA12_53=='=')) {s = 28;}
 
-				if (s >= 0) return s;
-				break;
-
-			case 34:
-				int LA13_53 = input.LA(1);
-
-				s = -1;
-				if ((LA13_53=='\"')) {s = 32;}
-
-				else if ((LA13_53=='\\')) {s = 30;}
-
-				else if (((LA13_53>='\u0000' && LA13_53<='\t')||(LA13_53>='\u000B' && LA13_53<='\f')||(LA13_53>='\u000E' && LA13_53<='\u001F')||LA13_53=='!'||(LA13_53>='#' && LA13_53<=',')||(LA13_53>='.' && LA13_53<='<')||(LA13_53>='>' && LA13_53<='[')||(LA13_53>=']' && LA13_53<='\uFFFF'))) {s = 31;}
-
-				else if ((LA13_53==' '||LA13_53=='-'||LA13_53=='=')) {s = 33;}
-
-				else s = 11;
-
-				if (s >= 0) return s;
-				break;
-
-			case 35:
-				int LA13_5 = input.LA(1);
-
-				s = -1;
-				if (((LA13_5>='\u0000' && LA13_5<='\u001F')||(LA13_5>='!' && LA13_5<=',')||(LA13_5>='.' && LA13_5<='<')||(LA13_5>='>' && LA13_5<='\uFFFF'))) {s = 11;}
-
-				else s = 29;
-
-				if (s >= 0) return s;
-				break;
-
-			case 36:
-				int LA13_9 = input.LA(1);
-
-				s = -1;
-				if (((LA13_9>='\u0000' && LA13_9<='\u001F')||(LA13_9>='!' && LA13_9<=',')||(LA13_9>='.' && LA13_9<='<')||(LA13_9>='>' && LA13_9<='\uFFFF'))) {s = 11;}
-
-				else s = 45;
-
-				if (s >= 0) return s;
-				break;
-
-			case 37:
-				int LA13_70 = input.LA(1);
-
-				s = -1;
-				if ((LA13_70=='\"')) {s = 32;}
-
-				else if ((LA13_70=='\\')) {s = 30;}
-
-				else if (((LA13_70>='\u0000' && LA13_70<='\t')||(LA13_70>='\u000B' && LA13_70<='\f')||(LA13_70>='\u000E' && LA13_70<='\u001F')||LA13_70=='!'||(LA13_70>='#' && LA13_70<=',')||(LA13_70>='.' && LA13_70<='<')||(LA13_70>='>' && LA13_70<='[')||(LA13_70>=']' && LA13_70<='\uFFFF'))) {s = 31;}
-
-				else if ((LA13_70==' '||LA13_70=='-'||LA13_70=='=')) {s = 33;}
-
-				else s = 11;
+				else s = 8;
 
 				if (s >= 0) return s;
 				break;
 		}
-		NoViableAltException nvae = new NoViableAltException(dfa.Description, 13, _s, input);
+		NoViableAltException nvae = new NoViableAltException(dfa.Description, 12, _s, input);
 		dfa.Error(nvae);
 		throw nvae;
 	}
